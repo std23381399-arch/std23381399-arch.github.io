@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Mustafa | أمن المعلومات وكشف التزييف</title>
+    <title>Cyber Mustafa | كاشف التزييف والأمن السيبراني</title>
+    <meta name="description" content="موقع مصطفى عباس المتخصص في الأمن السيبراني وأداة كشف التزييف العميق باستخدام الذكاء الاصطناعي.">
     <style>
         :root {
             --primary: #00ff41; /* لون الهاكر الأخضر */
-            --bg: #0d1117; /* خلفية داكنة */
-            --text: #c9d1d9;
-            --card-bg: #161b22;
+            --bg: #0d1117; /* خلفية داكنة جداً */
+            --card-bg: #161b22; /* خلفية الكروت */
+            --text: #c9d1d9; /* لون النص */
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -19,63 +20,95 @@
             padding: 0;
             line-height: 1.6;
         }
+        /* تصميم الرأس */
         header {
             background-color: #000;
             padding: 20px;
             text-align: center;
             border-bottom: 2px solid var(--primary);
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
         }
-        h1 {
+        header h1 {
             color: var(--primary);
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.2em;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+        header p { margin: 5px 0 0; color: #8b949e; }
+
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
         }
-        .hero {
-            background: linear-gradient(45deg, #1f2428, #24292e);
-            padding: 40px;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 40px;
+
+        /* --- قسم الأداة (الأهم) --- */
+        .tool-section {
+            background-color: var(--card-bg);
             border: 1px solid var(--primary);
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+            text-align: center;
         }
-        .hero h2 { color: #fff; }
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #000;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 10px;
-            transition: 0.3s;
+        .tool-header {
+            margin-bottom: 20px;
         }
-        .btn:hover { background-color: #fff; box-shadow: 0 0 10px #fff; }
+        .tool-header h2 { color: #fff; margin-bottom: 5px; }
         
+        /* إطار الأداة */
+        iframe {
+            width: 100%;
+            height: 850px; /* ارتفاع مناسب للأداة */
+            border: none;
+            border-radius: 8px;
+            background-color: #fff; /* خلفية بيضاء للأداة لضمان الوضوح */
+        }
+
+        /* --- قسم المقالات --- */
+        .articles-title {
+            border-right: 5px solid var(--primary);
+            padding-right: 15px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
         .article-card {
             background-color: var(--card-bg);
             padding: 20px;
-            margin-bottom: 20px;
             border-radius: 8px;
-            border-right: 4px solid var(--primary);
+            border: 1px solid #30363d;
+            transition: 0.3s;
         }
-        .article-card h3 { margin-top: 0; color: #fff; }
-        .date { font-size: 0.9em; color: #8b949e; }
-        
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .article-card h3 { color: var(--primary); margin-top: 0; }
+        .article-date { font-size: 0.85em; color: #8b949e; margin-bottom: 10px; display: block; }
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px dashed var(--primary);
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             margin-top: 50px;
             border-top: 1px solid #30363d;
-            font-size: 0.8em;
+            font-size: 0.9em;
+            color: #8b949e;
         }
     </style>
 </head>
@@ -83,36 +116,49 @@
 
     <header>
         <h1>CYBER MUSTAFA</h1>
-        <p>باحث في الأمن السيبراني • مكافحة التزييف العميق</p>
+        <p>مصطفى عباس • باحث في الأمن السيبراني وكشف التزييف</p>
     </header>
 
     <div class="container">
-        <div class="hero">
-            <h2>🕵️‍♂️ أداة كشف التزييف العميق (Deepfake Detector)</h2>
-            <p>هل الفيديو حقيقي أم مزيف بالذكاء الاصطناعي؟ قريباً ستتوفر الأداة هنا لفحص الفيديوهات بدقة عالية.</p>
-            <a href="#" class="btn">جرب الأداة (قريباً)</a>
+        
+        <div class="tool-section">
+            <div class="tool-header">
+                <h2>🕵️‍♂️ كاشف التزييف العميق (Deepfake Detector)</h2>
+                <p>استخدم الذكاء الاصطناعي لفحص الصور وكشف التلاعب بها فوراً</p>
+            </div>
+            <iframe src="https://tabiemedia99-ai-detector-pro.hf.space" title="أداة كشف التزييف"></iframe>
+            <p style="font-size: 0.8em; margin-top: 15px; color: #8b949e;">* هذه الأداة مطورة وتعمل باستضافة سحابية خاصة.</p>
         </div>
 
-        <h2 style="border-bottom: 1px solid #30363d; padding-bottom: 10px;">📝 أحدث المقالات</h2>
+        <h2 class="articles-title">📝 أحدث المقالات التقنية</h2>
+        
+        <div class="articles-grid">
+            <div class="article-card">
+                <h3>كيف يعمل التزييف العميق؟</h3>
+                <span class="article-date">4 فبراير 2026</span>
+                <p>شرح تقني مبسط للخوارزميات المستخدمة في إنشاء الفيديوهات المزيفة وكيف تكتشفها العين المجردة...</p>
+                <a href="#" class="read-more">اقرأ المقال &leftarrow;</a>
+            </div>
 
-        <div class="article-card">
-            <h3>كيف تحمي نفسك من الاحتيال الإلكتروني؟</h3>
-            <p class="date">4 فبراير 2026</p>
-            <p>في عالم مليء بالهجمات السيبرانية، تعرف على أهم 5 خطوات لتأمين حساباتك من الاختراق...</p>
-            <a href="#" style="color: var(--primary);">اقرأ المزيد &leftarrow;</a>
-        </div>
+            <div class="article-card">
+                <h3>حماية بياناتك من الهندسة الاجتماعية</h3>
+                <span class="article-date">1 فبراير 2026</span>
+                <p>الهندسة الاجتماعية هي أخطر أنواع الاختراق لأنها تستهدف البشر لا الأنظمة. إليك طرق الحماية...</p>
+                <a href="#" class="read-more">اقرأ المقال &leftarrow;</a>
+            </div>
 
-        <div class="article-card">
-            <h3>خطر التزييف العميق على المجتمع</h3>
-            <p class="date">1 فبراير 2026</p>
-            <p>تقنية الـ Deepfake تتطور بسرعة مخيفة. كيف نميز بين الحقيقة والخيال؟</p>
-            <a href="#" style="color: var(--primary);">اقرأ المزيد &leftarrow;</a>
+            <div class="article-card">
+                <h3>أفضل أدوات الهاكر الأخلاقي 2026</h3>
+                <span class="article-date">25 يناير 2026</span>
+                <p>قائمة بأهم الأدوات التي يستخدمها خبراء الأمن السيبراني في فحص الثغرات واختبار الاختراق...</p>
+                <a href="#" class="read-more">اقرأ المقال &leftarrow;</a>
+            </div>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Cyber Mustafa. جميع الحقوق محفوظة.</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 Cyber Mustafa</p>
     </footer>
 
 </body>
