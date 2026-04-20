@@ -242,6 +242,16 @@
     <footer>
         <p>جميع الحقوق محفوظة &copy; 2026 Cyber Mustafa</p>
     </footer>
+<script>
+    // منع النقر الأيمن لحماية تعب التصميم والكود
+    document.addEventListener('contextmenu', event => event.preventDefault());
 
+    // منع اختصار Ctrl+U لعرض السورس كود
+    document.onkeydown = function(e) {
+        if (e.ctrlKey && (e.keyCode === 85)) {
+            return false;
+        }
+    };
+</script>
 </body>
 </html>
