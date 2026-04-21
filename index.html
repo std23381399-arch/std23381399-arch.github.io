@@ -243,12 +243,29 @@
         <p>جميع الحقوق محفوظة &copy; 2026 Cyber Mustafa</p>
     </footer>
 <script>
-    // منع النقر الأيمن لحماية تعب التصميم والكود
+    // 1. منع النقر الأيمن
     document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // منع اختصار Ctrl+U لعرض السورس كود
+    // 2. تعطيل اختصارات لوحة المفاتيح (F12 والتحكم بالمتصفح)
     document.onkeydown = function(e) {
-        if (e.ctrlKey && (e.keyCode === 85)) {
+        // منع F12
+        if (e.keyCode == 123) {
+            return false;
+        }
+        // منع Ctrl+Shift+I (Inspect)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        // منع Ctrl+Shift+J (Console)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        // منع Ctrl+Shift+C (Element Selector)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+            return false;
+        }
+        // منع Ctrl+U (View Source)
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
             return false;
         }
     };
