@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 32 32" width="32" height="32"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: NCLKregas-Demo, 'NCL Kregas';
+        font-size: 7.78px;
+      }
+    </style>
+  </defs><rect class="cls-1" width="32" height="32"></rect><text class="cls-2" transform="translate(6.47 15.77)"><tspan x="0" y="0">AX</tspan><tspan x="0" y="6.74">ON</tspan></text></svg>
