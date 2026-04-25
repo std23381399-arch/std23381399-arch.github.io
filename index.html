@@ -43,6 +43,22 @@
     padding: 0;
     line-height: 1.6;
 }
+        /* تحويل الحاوية الرئيسية إلى زجاج شفاف */
+.container {
+    background: rgba(13, 17, 23, 0.7) !important; /* شفافية مريحة للعين */
+    backdrop-filter: blur(15px); /* تأثير التغبيش الزجاجي الفاخر */
+    -webkit-backdrop-filter: blur(15px); 
+    border: 1px solid rgba(0, 255, 65, 0.2); /* حواف خضراء فسفورية ناعمة */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    margin-top: 20px;
+}
+
+/* لجعل الخلفية تدعم الشفافية وتعطي عمقاً للموقع */
+body {
+    background: linear-gradient(135deg, #050505 0%, #0d1117 100%) fixed !important;
+}
         /* تصميم الرأس */
         header {
             background-color: #000;
