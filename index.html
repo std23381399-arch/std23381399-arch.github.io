@@ -2,152 +2,136 @@
 <html lang="ar" dir="rtl">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9FLGS8MEL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H9FLGS8MEL');
-</script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6073099430341083"
-     crossorigin="anonymous"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H9FLGS8MEL');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6073099430341083" crossorigin="anonymous"></script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Mustafa | كاشف التزييف والأمن السيبراني</title>
+    <title>AXON CORE | كاشف التزييف والأمن السيبراني</title>
     <meta name="description" content="نظام AXON للتحقق من سلامة الوسائط البصرية">
-    <link rel="icon" type="image/svg" href="L5.svg"
+    <link rel="icon" type="image/svg+xml" href="L5.svg">
     <link rel="apple-touch-icon" href="L5.svg" />
+
     <style>
+        /* 1. تعريف الخطوط */
         @font-face {
-    font-family: 'AxonCustom';
-    src: url('ReadexPro-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-        * {
-    font-family: 'AxonCustom', sans-serif !important;
-    -webkit-font-smoothing: antialiased; /* لنظام الماك والآيفون */
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility; /* لتحسين قراءة الحروف المعقدة */
-}
+            font-family: 'AxonCustom';
+            src: url('ReadexPro-Regular.ttf') format('truetype');
+        }
+
         :root {
-            --primary: #00ff41; /* لون الهاكر الأخضر */
-            --bg: #0d1117; /* خلفية داكنة جداً */
-            --card-bg: #161b22; /* خلفية الكروت */
-            --text: #c9d1d9; /* لون النص */
+            --primary: #00ff41;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(0, 255, 65, 0.15);
+            --text: #c9d1d9;
         }
+
+        * {
+            font-family: 'AxonCustom', sans-serif !important;
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        /* 2. الخلفية المتحركة (The Moving Background) */
+        /* 2. الخلفية الجديدة: الشبكة الرقمية المتحركة (Pure CSS) */
         body {
-    background-color: var(--bg);
-    color: var(--text);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-        /* تحويل الحاوية الرئيسية إلى زجاج شفاف */
-.container {
-    background: rgba(13, 17, 23, 0.7) !important; /* شفافية مريحة للعين */
-    backdrop-filter: blur(15px); /* تأثير التغبيش الزجاجي الفاخر */
-    -webkit-backdrop-filter: blur(15px); 
-    border: 1px solid rgba(0, 255, 65, 0.2); /* حواف خضراء فسفورية ناعمة */
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-    padding: 25px;
-    margin-top: 20px;
-}
-
-/* لجعل الخلفية تدعم الشفافية وتعطي عمقاً للموقع */
-body {
-    background: linear-gradient(135deg, #050505 0%, #0d1117 100%) fixed !important;
-}
-        /* تصميم الرأس */
-        header {
-            background-color: #000;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid var(--primary);
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
-        }
-        header h1 {
-            color: var(--primary);
             margin: 0;
-            font-size: 2.2em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            padding: 0;
+            color: var(--text);
+            background-color: #000000;
+            overflow-x: hidden;
         }
-        header p { margin: 5px 0 0; color: #8b949e; }
 
+        @keyframes moveGrid {
+            from { background-position: 0 0, 0 0, center; }
+            to { background-position: 50px 50px, 50px 50px, center; }
+        }
+
+        /* 3. التأثير الزجاجي الشامل (Global Glassmorphism) */
+        header, nav, .container, footer, .tool-section, .article-card, .info-box {
+            background: var(--glass-bg) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border) !important;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* 4. حركات الدخول (Fade In) */
         .container {
-            max-width: 1000px;
+            max-width: 1110px;
             margin: 20px auto;
             padding: 20px;
+            animation: fadeInUp 1s ease-out;
         }
 
-        /* --- قسم الأداة (الأهم) --- */
-        .tool-section {
-            background-color: var(--card-bg);
-            border: 1px solid var(--primary);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        header {
+            padding: 40px 20px;
             text-align: center;
-        }
-        .tool-header {
-            margin-bottom: 20px;
-        }
-        .tool-header h2 { color: #fff; margin-bottom: 5px; }
-        
-        /* إطار الأداة */
-        iframe {
-            width: 100%;
-            height: 850px; /* ارتفاع مناسب للأداة */
-            border: none;
-            border-radius: 8px;
-            background-color: #fff; /* خلفية بيضاء للأداة لضمان الوضوح */
+            margin: 10px auto;
+            max-width: 95%;
         }
 
-        /* --- قسم المقالات --- */
-        .articles-title {
-            border-right: 5px solid var(--primary);
-            padding-right: 15px;
-            margin-bottom: 20px;
-            color: #fff;
+        header h1 {
+            color: var(--primary);
+            font-size: 2.8em;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+            margin: 0;
         }
 
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        nav {
+            display: flex;
+            justify-content: center;
             gap: 20px;
+            padding: 15px;
+            margin: 10px auto;
+            max-width: 95%;
         }
 
-        .article-card {
-            background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #30363d;
-            transition: 0.3s;
-        }
-        .article-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-        .article-card h3 { color: var(--primary); margin-top: 0; }
-        .article-date { font-size: 0.85em; color: #8b949e; margin-bottom: 10px; display: block; }
-        .read-more {
-            display: inline-block;
-            margin-top: 10px;
+        nav a {
             color: #fff;
             text-decoration: none;
-            border-bottom: 1px dashed var(--primary);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        /* 5. تنسيق الأداة (Iframe) */
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            border-radius: 10px;
+            background: #fff; /* للحفاظ على وضوح الأداة المرفوعة */
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
         }
 
         footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-            border-top: 1px solid #30363d;
-            font-size: 0.9em;
-            color: #8b949e;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        /* تحسينات الموبايل */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8em; }
+            iframe { height: 60px; }
         }
     </style>
 </head>
@@ -156,111 +140,130 @@ body {
     <header>
         <h1>AXON CORE</h1>
         <p>نظام التحليل الجنائي المتقدم للتحقق من المصداقية الرقمية</p>
-        
-        <nav style="margin-top: 20px; border-top: 1px solid #30363d; padding-top: 10px;">
-    <a href="index.html" style="color: #c9d1d9; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em;">الرئيسية</a>
-    <span style="color: #30363d;">|</span>
-    <a href="about.html" style="color: #c9d1d9; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em;">من نحن</a>
-    <span style="color: #30363d;">|</span>
-    <a href="privacy.html" style="color: #c9d1d9; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em;">سياسة الخصوصية</a>
-    <span style="color: #30363d;">|</span>
-    <a href="contact.html" style="color: #c9d1d9; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em;">اتصل بنا</a>
-</nav>
     </header>
+
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="privacy.html">الخصوصية</a>
+        <a href="contact.html">اتصل بنا</a>
+    </nav>
+
     <div class="container">
-        
-        <div class="tool-section">
-            <div class="tool-header">
-                <h2>نظام AXON للتحقق من سلامة الوسائط البصرية</h2>
-                <p>تحليل سلامة الوسائط الرقمية واكتشاف التعديلات غير المرئية بدقة عالية.</p>
-            </div>
-            <iframe src="https://tabiemedia99-ai-detector-pro.hf.space" title="أداة كشف التزييف"></iframe>
-            <p style="font-size: 0.8em; margin-top: 15px; color: #8b949e;">* هذه الأداة مطورة وتعمل باستضافة سحابية خاصة.</p>
+        <div class="tool-section" style="padding: 20px; text-align: center; margin-bottom: 30px;">
+            <h2>نظام <span class="highlight">AXON</span> للتحقق من سلامة الوسائط</h2>
+            <p>تحليل سلامة الوسائط الرقمية واكتشاف التعديلات بدقة عالية.</p>
+            <iframe src="https://tabiemedia99-ai-detector-pro.hf.space"></iframe>
         </div>
 
-        <div style="background: var(--card-bg); border: 1px solid #30363d; border-radius: 10px; padding: 30px; margin-top: 40px;">
+        <div class="info-box" style="padding: 30px;">
+            <h2 style="color: var(--primary); border-bottom: 1px solid var(--glass-border); padding-bottom: 15px;">كيف تكتشف الصور المزيفة؟</h2>
+            <p>نظام <span class="highlight">AXON</span> هو ثمرة أبحاث معمقة في التحليل الجنائي الرقمي، نهدف من خلاله إلى وضع معايير جديدة للتحقق من سلامة الوسائط البصرية.</p>
             
-            <h2 style="color: var(--primary); border-bottom: 1px solid #30363d; padding-bottom: 15px; margin-top: 0;">
-                كيف تكتشف الصور المزيفة بالذكاء الاصطناعي؟
-            </h2>
-            
-            <p style="font-size: 1.1em; color: #c9d1d9;">
-                في عصر التكنولوجيا المتسارع، أصبح من الصعب جداً التفريق بين الصور الحقيقية والصور التي تم إنشاؤها أو تعديلها بواسطة الذكاء الاصطناعي (AI Generated Images). تقنيات مثل "التزييف العميق" (Deepfake) تطورت بشكل مخيف، ولهذا قمنا بتطوير هذه الأداة المجانية لحمايتك.
-            </p>
-
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0;">
-                
-                <div style="border: 1px dashed var(--primary); padding: 15px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2em;">🎯</div>
-                    <h3 style="color: #fff; margin: 10px 0;">دقة عالية</h3>
-                    <p style="font-size: 0.9em; margin: 0;">نستخدم أحدث الموديلات العالمية (Transformers) للتحليل.</p>
-                </div>
-
-                <div style="border: 1px dashed var(--primary); padding: 15px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2em;">💸</div>
-                    <h3 style="color: #fff; margin: 10px 0;">مجاني 100%</h3>
-                    <p style="font-size: 0.9em; margin: 0;">لا توجد رسوم مخفية، الأداة متاحة للجميع.</p>
-                </div>
-
-                <div style="border: 1px dashed var(--primary); padding: 15px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2em;">⚡</div>
-                    <h3 style="color: #fff; margin: 10px 0;">سرعة التحليل</h3>
-                    <p style="font-size: 0.9em; margin: 0;">احصل على النتيجة خلال ثوانٍ معدودة.</p>
-                </div>
-
-                <div style="border: 1px dashed var(--primary); padding: 15px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2em;">🔒</div>
-                    <h3 style="color: #fff; margin: 10px 0;">خصوصية تامة</h3>
-                    <p style="font-size: 0.9em; margin: 0;">نحن لا نحتفظ بصورك. يتم تحليل الصورة ومسحها فوراً.</p>
-                </div>
-
+                <div class="article-card" style="text-align: center; padding: 15px;">🎯<br>دقة عالية</div>
+                <div class="article-card" style="text-align: center; padding: 15px;">🔒<br>خصوصية تامة</div>
+                <div class="article-card" style="text-align: center; padding: 15px;">⚡<br>سرعة تحليل</div>
             </div>
-
-            <div style="display: flex; flex-wrap: wrap; gap: 30px;">
-                
-                <div style="flex: 1; min-width: 300px;">
-                    <h3 style="color: #fff;">🛠️ كيف تعمل هذه الأداة؟</h3>
-                    <p>يعتمد هذا التطبيق على خوارزميات تعلم الآلة (Machine Learning) وموديلات متطورة مدربة على ملايين الصور. عندما تقوم برفع صورة، يقوم النظام بتحليل "البصمة الرقمية" للصورة (Digital Artifacts) التي لا ترى بالعين المجردة، ويبحث عن تشوهات دقيقة جداً.</p>
-                </div>
-
-                <div style="flex: 1; min-width: 300px;">
-                    <h3 style="color: #fff;">⚠️ لماذا يجب عليك فحص الصور؟</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px;">✅ التحقق من صحة الأخبار والصور المنتشرة.</li>
-                        <li style="margin-bottom: 10px;">✅ كشف الحسابات الوهمية والمولدة بالذكاء الاصطناعي.</li>
-                        <li style="margin-bottom: 10px;">✅ حماية نفسك من عمليات الاحتيال الإلكتروني.</li>
-                    </ul>
-                </div>
-
-            </div>
-
         </div>
-</div> </div>
-<div style="max-width: 1000px; margin: 50px auto; padding: 0 20px;">
-        <h2 style="color: #fff; border-bottom: 1px solid #30363d; padding-bottom: 10px;"> مقالات تعليمية</h2>
-    <div style="background: #161b22; padding: 20px; border-radius: 10px; border: 1px solid #30363d; display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
-            
-            <div style="flex: 1; min-width: 300px;">
-                <h3 style="color: #00ff41; margin: 0 0 10px 0;">كيف تكتشف الصور المزيفة بالذكاء الاصطناعي؟</h3>
-                <p style="font-size: 0.9em; color: #8b949e;">دليل شامل يشرح لك 5 علامات تفضح صور الذكاء الاصطناعي، من تشوهات الأيدي إلى النصوص الغريبة...</p>
-                <a href="detect-deepfake.html" style="color: #fff; text-decoration: underline;">اقرأ المقال كاملاً &leftarrow;</a>
-            </div>
 
-            <div style="flex: 1; min-width: 300px; border-right: 1px solid #30363d; padding-right: 20px;">
-                <h3 style="color: #00ff41; margin: 0 0 10px 0;">الهندسة الاجتماعية: اختراق العقول</h3>
-                <p style="font-size: 0.9em; color: #8b949e;">هل تعلم أن 98% من الاختراقات تبدأ بخدعة بسيطة؟ تعرف على طرق الحماية من التصيد...</p>
-                <a href="social-engineering.html" style="color: #fff; text-decoration: underline;">اقرأ المقال كاملاً &leftarrow;</a>
-            <div style="flex: 1; min-width: 300px; padding: 20px 0;">
-    <h3 style="color: #00ff41; margin: 0 0 10px 0;">تطور التزييف العميق في 2026</h3>
-    <p style="font-size: 0.9em; color: #8b949e;">تعرف على أحدث مخاطر الذكاء الاصطناعي وكيف تحمي نفسك من عمليات التزييف المتطورة...</p>
-    <a href="deepfake-2026.html" style="color: #fff; text-decoration: underline;">اقرأ المقال كاملاً &leftarrow;</a>
-</div>
+        <h2 style="margin-top: 40px;">مقالات تعليمية</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div class="article-card" style="padding: 20px;">
+                <h3 style="color: var(--primary);">كشف تزييف 2026</h3>
+                <p>دليل شامل حول أحدث تقنيات التزييف العميق وكيفية مواجهتها.</p>
+                <a href="detect-deepfake.html" style="color: #fff;">اقرأ المزيد &leftarrow;</a>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 Cyber Mustafa</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 AXON CORE | المختبر الجنائي الرقمي</p>
     </footer>
-<script src="security.js"></script>
+    <canvas id="neuralCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('neuralCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray = [];
+        const numberOfParticles = (canvas.width * canvas.height) / 9000; // كثافة النقاط
+
+        // إنشاء النقاط
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.color = 'rgba(0, 255, 65, 0.7)'; // لون الهاكر الأخضر
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                // إعادة النقاط عند الخروج من الشاشة
+                if (this.x > canvas.width) this.x = 0; else if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0; else if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        // رسم الخطوط المتصلة
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                    + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                        opacityValue = 1 - (distance / 20000);
+                        ctx.strokeStyle = 'rgba(0, 255, 65, ' + opacityValue + ')';
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            connect();
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        // إعادة الضبط عند تغيير حجم الشاشة
+        window.addEventListener('resize', function(){
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+    </script>
+
+    <script src="security.js"></script>
 </body>
 </html>
