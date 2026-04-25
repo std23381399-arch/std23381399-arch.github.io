@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: NCLKregas-Demo, 'NCL Kregas';
+        font-size: 4.62px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #00ff41;
+      }
+    </style>
+  </defs>
+  <image width="1080" height="1080" transform="translate(-2.5 -2.5) scale(.03)" xlink:href="خلفية.png"/>
+  <text class="cls-1" transform="translate(10.34 15.32)"><tspan class="cls-3"><tspan x="0" y="0">AX</tspan></tspan><tspan class="cls-2"><tspan x="0" y="4">ON</tspan></tspan></text>
+</svg>
