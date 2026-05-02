@@ -1,43 +1,347 @@
-/* 1. الخلفية المتحركة للموقع بالكامل */
+/* ================================================
+   AXON CORE — Global Shared CSS v2.1
+   هذا الملف يغير تصميم جميع صفحاتك دفعة واحدة
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Cairo:wght@300;400;600;700&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --c1: #00ffe7;
+    --c2: #7b2fff;
+    --c3: #ff2d78;
+    --c4: #00ff41;
+    --bg: #03020a;
+    --glass: rgba(0,255,231,0.04);
+    --glass-b: rgba(0,255,231,0.12);
+    --text: #d0e8f5;
+    --muted: #5a7a8a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+/* ── BODY ── */
 body {
-    margin: 0;
-    padding: 0;
-    color: #c9d1d9;
-    background-color: #000;
+    font-family: 'Cairo', sans-serif !important;
+    background: var(--bg) !important;
+    color: var(--text) !important;
     overflow-x: hidden;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-/* 2. جعل الهيدر والنابار والفوتر شفافين في كل الصفحات */
-header, nav, footer {
-    background: rgba(255, 255, 255, 0.03) !important;
-    backdrop-filter: blur(15px) !important;
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(0, 255, 65, 0.15) !important;
-    border-radius: 15px;
-    margin: 10px auto;
-    padding: 20px;
+/* ── طبقة الضوضاء ── */
+body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; opacity: 0.35;
+}
+
+/* ── شبكة الخلفية المتحركة ── */
+body::after {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+        linear-gradient(rgba(0,255,231,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,231,0.022) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridShift 20s linear infinite;
+}
+@keyframes gridShift { 100% { background-position: 60px 60px; } }
+
+/* ── HEADER ── */
+header {
+    position: relative; z-index: 10;
+    background: rgba(3,2,10,0.7) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid var(--glass-b) !important;
+    border-radius: 4px !important;
+    margin: 15px auto !important;
     max-width: 95%;
+    padding: 40px 20px !important;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(0,255,231,0.05), inset 0 1px 0 rgba(0,255,231,0.08) !important;
+    overflow: hidden;
 }
 
-/* 3. جعل الحاوية الرئيسية شفافة (لصفحات الخصوصية ومن نحن) */
-.container {
-    background: rgba(255, 255, 255, 0.03) !important;
-    backdrop-filter: blur(15px) !important;
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(0, 255, 65, 0.15) !important;
-    border-radius: 15px;
-    padding: 30px;
-    max-width: 1100px;
-    margin: 20px auto;
+/* خط علوي ملوّن للهيدر */
+header::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--c2), var(--c1), var(--c3));
 }
 
-/* 4. تنسيق الروابط في القائمة */
+header h1 {
+    font-family: 'Orbitron', monospace !important;
+    font-weight: 900 !important;
+    letter-spacing: 6px !important;
+    font-size: clamp(1.8em, 5vw, 3.5em) !important;
+    background: linear-gradient(135deg, #fff 0%, var(--c1) 45%, var(--c2) 85%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: none !important;
+    margin-bottom: 10px !important;
+}
+
+header h2, header h3 {
+    font-family: 'Share Tech Mono', monospace !important;
+    font-size: clamp(0.8em, 1.5vw, 1em) !important;
+    color: var(--muted) !important;
+    letter-spacing: 3px !important;
+    font-weight: normal !important;
+}
+
+/* ── NAV ── */
+nav {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    background: rgba(3,2,10,0.9) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(0,255,231,0.08) !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    padding: 12px 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    box-shadow: none !important;
+}
+
 nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 15px;
-    transition: 0.3s;
+    font-family: 'Share Tech Mono', monospace !important;
+    font-size: 0.8em !important;
+    color: var(--muted) !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+    padding: 8px 18px !important;
+    margin: 0 !important;
+    border: 1px solid transparent !important;
+    border-radius: 2px !important;
+    letter-spacing: 2px !important;
+    transition: all 0.3s ease !important;
 }
-nav a:hover { color: #00ff41; }
+
+nav a:hover {
+    color: var(--c1) !important;
+    border-color: rgba(0,255,231,0.3) !important;
+    background: rgba(0,255,231,0.06) !important;
+    text-shadow: none !important;
+}
+
+/* ── CONTAINER (صفحات من نحن، الخصوصية، اتصل بنا) ── */
+.container {
+    position: relative; z-index: 5;
+    background: rgba(3,2,10,0.6) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: 1px solid var(--glass-b) !important;
+    border-radius: 4px !important;
+    padding: 40px !important;
+    max-width: 1100px !important;
+    margin: 30px auto !important;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4) !important;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--c2), var(--c1));
+}
+
+/* ── HEADINGS داخل الصفحات ── */
+.container h1, .container h2 {
+    font-family: 'Orbitron', monospace !important;
+    letter-spacing: 3px !important;
+    color: #fff !important;
+    margin-bottom: 8px !important;
+}
+.container h1 { font-size: clamp(1.4em, 3vw, 2em) !important; }
+.container h2 {
+    font-size: clamp(1.1em, 2vw, 1.5em) !important;
+    color: var(--c1) !important;
+    border-bottom: 1px solid rgba(0,255,231,0.1) !important;
+    padding-bottom: 12px !important;
+    margin-top: 35px !important;
+}
+.container h3 {
+    font-family: 'Share Tech Mono', monospace !important;
+    color: var(--c1) !important;
+    letter-spacing: 2px !important;
+    font-size: 0.95em !important;
+    margin: 25px 0 12px !important;
+}
+
+/* ── PARAGRAPH ── */
+.container p, .container li {
+    color: #a0b8c8 !important;
+    line-height: 1.9 !important;
+    font-size: 0.97em !important;
+}
+
+/* ── LINKS داخل المحتوى ── */
+.container a {
+    color: var(--c1) !important;
+    text-decoration: none !important;
+    transition: opacity 0.2s !important;
+}
+.container a:hover { opacity: 0.75 !important; }
+
+/* ── FOOTER ── */
+footer {
+    position: relative; z-index: 5;
+    background: rgba(3,2,10,0.7) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: none !important;
+    border-top: 1px solid rgba(0,255,231,0.08) !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    margin: 60px 0 0 !important;
+    padding: 35px 20px !important;
+    text-align: center !important;
+    box-shadow: none !important;
+}
+
+footer p {
+    font-family: 'Share Tech Mono', monospace !important;
+    font-size: 0.75em !important;
+    color: var(--muted) !important;
+    letter-spacing: 2px !important;
+}
+
+/* ── FORM ELEMENTS (صفحة اتصل بنا) ── */
+input, textarea, select {
+    width: 100%;
+    padding: 13px 16px;
+    background: rgba(0,0,0,0.4) !important;
+    border: 1px solid rgba(0,255,231,0.15) !important;
+    border-radius: 2px !important;
+    color: var(--text) !important;
+    font-family: 'Cairo', sans-serif !important;
+    font-size: 0.95em;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-bottom: 14px;
+}
+input:focus, textarea:focus {
+    border-color: var(--c1) !important;
+    box-shadow: 0 0 12px rgba(0,255,231,0.08) !important;
+}
+input::placeholder, textarea::placeholder { color: var(--muted) !important; }
+
+label {
+    display: block;
+    font-family: 'Share Tech Mono', monospace !important;
+    font-size: 0.75em !important;
+    color: var(--muted) !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 6px !important;
+}
+
+button, input[type="submit"] {
+    background: rgba(0,255,231,0.08) !important;
+    border: 1px solid rgba(0,255,231,0.35) !important;
+    color: var(--c1) !important;
+    font-family: 'Share Tech Mono', monospace !important;
+    letter-spacing: 3px !important;
+    padding: 12px 28px !important;
+    cursor: pointer !important;
+    border-radius: 2px !important;
+    transition: all 0.3s ease !important;
+    font-size: 0.85em !important;
+    width: auto !important;
+    margin-bottom: 0 !important;
+}
+button:hover, input[type="submit"]:hover {
+    background: rgba(0,255,231,0.14) !important;
+    box-shadow: 0 0 20px rgba(0,255,231,0.12) !important;
+}
+
+/* ── TABLES ── */
+table {
+    width: 100%; border-collapse: collapse;
+    font-family: 'Share Tech Mono', monospace;
+}
+th {
+    padding: 13px 16px; font-size: 0.75em; font-weight: normal;
+    color: var(--muted); letter-spacing: 2px;
+    border: 1px solid rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.02);
+}
+td {
+    padding: 13px 16px; font-size: 0.88em;
+    border: 1px solid rgba(255,255,255,0.04);
+    color: var(--text);
+}
+tr:hover td { background: rgba(0,255,231,0.03); }
+
+/* ── HIGHLIGHT / INFO BOX ── */
+.highlight, .info-box, blockquote {
+    padding: 18px 22px !important;
+    background: rgba(0,255,231,0.05) !important;
+    border: 1px solid rgba(0,255,231,0.18) !important;
+    border-radius: 4px !important;
+    border-right: 3px solid var(--c1) !important;
+    color: var(--text) !important;
+    margin: 20px 0 !important;
+    font-size: 0.93em !important;
+    line-height: 1.8 !important;
+}
+
+/* ── ARTICLE CARDS ── */
+.article-card, .feature-card, .card {
+    background: rgba(0,0,0,0.3) !important;
+    border: 1px solid rgba(0,255,231,0.08) !important;
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+    overflow: hidden;
+    position: relative;
+}
+.article-card:hover, .feature-card:hover, .card:hover {
+    border-color: rgba(0,255,231,0.3) !important;
+    background: rgba(0,255,231,0.04) !important;
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3) !important;
+}
+.article-card h3, .feature-card h3, .feature-card h4 {
+    font-family: 'Orbitron', monospace !important;
+    color: var(--c1) !important;
+    letter-spacing: 1px !important;
+    font-size: 0.9em !important;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+    background: rgba(0,255,231,0.2); border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(0,255,231,0.4); }
+
+/* ── SELECTION ── */
+::selection { background: rgba(0,255,231,0.2); color: var(--c1); }
+
+/* ── RESPONSIVE ── */
+@media(max-width: 768px) {
+    .container { padding: 20px 16px !important; }
+    header { padding: 30px 16px !important; }
+    nav { gap: 4px !important; }
+    nav a { padding: 6px 12px !important; font-size: 0.75em !important; }
+}
