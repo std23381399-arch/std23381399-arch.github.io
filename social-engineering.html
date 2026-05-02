@@ -3,125 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الهندسة الاجتماعية: كيف تخترق العقول قبل الأجهزة؟ | Cyber Mustafa</title>
+    <title>الهندسة الاجتماعية: كيف تخترق العقول قبل الأجهزة؟ | AXON CORE</title>
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="تعرف على أخطر أنواع الاختراق الذي يستهدف البشر. دليل شامل للحماية من الهندسة الاجتماعية والتصيد الاحتيالي.">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #0d1117; color: #c9d1d9; margin: 0; line-height: 1.8; }
-        header { background: #161b22; padding: 20px; border-bottom: 1px solid #30363d; text-align: center; }
-        header a { color: #fff; text-decoration: none; font-weight: bold; margin: 0 15px; }
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; background: #161b22; border-radius: 10px; border: 1px solid #30363d; }
-        h1 { color: #00ff41; font-size: 2em; margin-bottom: 10px; }
-        .date { color: #8b949e; font-size: 0.9em; display: block; margin-bottom: 30px; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-        h2 { color: #fff; margin-top: 30px; border-right: 4px solid #00ff41; padding-right: 15px; }
-        p { font-size: 1.1em; color: #c9d1d9; margin-bottom: 20px; }
-        .warning-box { background: #3d1619; color: #ff7b72; padding: 15px; border-radius: 5px; border: 1px solid #ff7b72; margin: 20px 0; }
-        ul { margin-bottom: 20px; }
-        li { margin-bottom: 10px; }
-        footer { text-align: center; margin-top: 50px; padding: 20px; color: #8b949e; border-top: 1px solid #30363d; }
-    </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="privacy.html">الخصوصية</a>
-            <a href="contact.html">اتصل بنا</a>
-        </nav>
-    </header>
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
 
-    <div class="container">
-        <h1>الهندسة الاجتماعية: كيف يتم اختراقك بدون كتابة سطر كود واحد؟</h1>
-        <span class="date">كتب بواسطة: مصطفى عباس | تصنيف: أمن المعلومات</span>
+<!-- BG Effects -->
+<div class="bg-grid"></div>
+<div class="scanline"></div>
+<canvas id="neuralCanvas"></canvas>
 
-        <p>يعتقد الكثيرون أن "الهاكر" هو شخص يكتب أكواداً خضراء معقدة على شاشة سوداء لاختراق الأنظمة. لكن في الحقيقة، أسهل طريقة للاختراق ليست كسر النظام، بل "كسر المستخدم". هذا ما نسميه بالهندسة الاجتماعية.</p>
+<!-- ── HEADER ── -->
+<header>
+    <div class="logo-glow"></div>
+    <p class="header-tag">SYSTEM ONLINE // FORENSIC INTELLIGENCE v2.1</p>
+    <div class="logo-wrap">
+        <h1>AXON CORE</h1>
+    </div>
+    <p class="subtitle">نظام التحليل الجنائي المتقدم للتحقق من المصداقية الرقمية</p>
+    <div class="header-line"></div>
+</header>
+
+<!-- ── NAV ── -->
+<nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="privacy.html">سياسة الخصوصية</a>
+    <a href="contact.html">اتصل بنا</a>
+</nav>
+
+<!-- ── WRAPPER & CONTAINER ── -->
+<div class="wrapper">
+    <div class="container reveal">
+        <h1 style="color: var(--c1); font-size: clamp(1.8em, 4vw, 2.5em); margin-bottom: 5px;">الهندسة الاجتماعية</h1>
+        <h2 style="margin-top: 0; color: #fff; border: none; padding: 0; font-family: 'Cairo', sans-serif;">كيف يتم اختراقك بدون كتابة سطر كود واحد؟</h2>
         
-        <h2>ما هي الهندسة الاجتماعية؟</h2>
-        <p>هي فن التلاعب بالبشر لدفهم إلى إفشاء معلومات سرية. الهاكر هنا لا يستهدف الثغرات في الويندوز أو الأندرويد، بل يستهدف "الثغرات" في النفس البشرية مثل: الخوف، الطمع، الفضول، أو الرغبة في المساعدة.</p>
+        <span style="display: block; font-family: 'Share Tech Mono', monospace; font-size: 0.85em; color: var(--muted); margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid rgba(0,255,231,0.1);">
+            // كُتب بواسطة: مصطفى عباس | تصنيف: أمن المعلومات //
+        </span>
 
-        <div class="warning-box">
-            <strong>حقيقة صادمة:</strong> تشير الدراسات إلى أن 98% من الهجمات السيبرانية تبدأ بنوع من الهندسة الاجتماعية!
+        <p class="reveal">يعتقد الكثيرون أن "الهاكر" هو شخص يكتب أكواداً خضراء معقدة على شاشة سوداء لاختراق الأنظمة. لكن في الحقيقة، أسهل طريقة للاختراق ليست كسر النظام، بل "كسر المستخدم". هذا ما نسميه بالهندسة الاجتماعية.</p>
+        
+        <h3 class="reveal" style="font-size: 1.4em; margin-top: 40px; color: var(--c1);">ما هي الهندسة الاجتماعية؟</h3>
+        <p class="reveal">هي فن التلاعب بالبشر لدفهم إلى إفشاء معلومات سرية. الهاكر هنا لا يستهدف الثغرات في الويندوز أو الأندرويد، بل يستهدف "الثغرات" في النفس البشرية مثل: الخوف، الطمع، الفضول، أو الرغبة في المساعدة.</p>
+
+        <!-- استخدام blockquote للتوافق مع الثيم السيبراني -->
+        <blockquote class="reveal" style="border-right-color: var(--c3);">
+            <strong style="color: var(--c3);">حقيقة صادمة:</strong> تشير الدراسات إلى أن 98% من الهجمات السيبرانية تبدأ بنوع من الهندسة الاجتماعية!
+        </blockquote>
+
+        <h3 class="reveal" style="font-size: 1.4em; margin-top: 40px; color: var(--c1);">أشهر حيل الهندسة الاجتماعية التي قد تواجهها</h3>
+        
+        <div class="reveal">
+            <h4 style="color: #fff; font-size: 1.1em; margin-bottom: 5px;">1. التصيد الاحتيالي (Phishing)</h4>
+            <p>تصلك رسالة بريد إلكتروني تبدو وكأنها من "إدارة إنستغرام" تخبرك أن حسابك سيتم إغلاقه إذا لم تضغط على الرابط وتؤكد هويتك. بمجرد الضغط وكتابة الباسورد، تصل المعلومات للهاكر.</p>
         </div>
 
-        <h2>أشهر حيل الهندسة الاجتماعية التي قد تواجهها</h2>
-        
-        <h3>1. التصيد الاحتيالي (Phishing)</h3>
-        <p>تصلك رسالة بريد إلكتروني تبدو وكأنها من "إدارة إنستغرام" تخبرك أن حسابك سيتم إغلاقه إذا لم تضغط على الرابط وتؤكد هويتك. بمجرد الضغط وكتابة الباسورد، تصل المعلومات للهاكر.</p>
+        <div class="reveal">
+            <h4 style="color: #fff; font-size: 1.1em; margin-bottom: 5px;">2. سيناريو "الدعم الفني" الكاذب</h4>
+            <p>يتصل بك شخص ويدعي أنه من شركة الاتصالات أو البنك، ويخبرك بوجود مشكلة في حسابك وأنه يحتاج لرمز الـ OTP الذي وصلك الآن لحلها. تذكر دائماً: البنك لا يطلب الرمز السري عبر الهاتف.</p>
+        </div>
 
-        <h3>2. سيناريو "الدعم الفني" الكاذب</h3>
-        <p>يتصل بك شخص ويدعي أنه من شركة الاتصالات أو البنك، ويخبرك بوجود مشكلة في حسابك وأنه يحتاج لرمز الـ OTP الذي وصلك الآن لحلها. تذكر دائماً: البنك لا يطلب الرمز السري عبر الهاتف.</p>
+        <div class="reveal">
+            <h4 style="color: #fff; font-size: 1.1em; margin-bottom: 5px;">3. الفلاشة الملقاة (Baiting)</h4>
+            <p>قد يرمي الهاكر "فلاش ميموري" (USB) في مكان عام (مقهى، جامعة) ويكتب عليها "رواتب الموظفين" أو "صور خاصة". فضولك سيدفعك لتوصيلها بجهازك، وبمجرد توصيلها يتم تثبيت فيروس التجسس.</p>
+        </div>
 
-        <h3>3. الفلاشة الملقاة (Baiting)</h3>
-        <p>قد يرمي الهاكر "فلاش ميموري" (USB) في مكان عام (مقهى، جامعة) ويكتب عليها "رواتب الموظفين" أو "صور خاصة". فضولك سيدفعك لتوصيلها بجهازك، وبمجرد توصيلها يتم تثبيت فيروس التجسس.</p>
-
-        <h2>كيف تحمي نفسك؟ 3 قواعد ذهبية</h2>
-        <ul>
-            <li><strong>شكك في كل شيء:</strong> لا تضغط على أي رابط، ولا تحمل أي ملف من مصدر غير موثوق، حتى لو كان من صديق (قد يكون حسابه مخترقاً).</li>
-            <li><strong>تفعيل المصادقة الثنائية (2FA):</strong> هي خط الدفاع الأخير. حتى لو عرف الهاكر كلمة سرك، لن يستطيع الدخول بدون الرمز الذي على هاتفك.</li>
-            <li><strong>تحقق من الرابط:</strong> دائماً انظر لشريط العنوان. هل هو (facebook.com) أم (faceb00k-login.com)؟ الحروف المتشابهة هي خدعة شائعة.</li>
+        <h3 class="reveal" style="font-size: 1.4em; margin-top: 40px; color: var(--c1);">كيف تحمي نفسك؟ 3 قواعد ذهبية</h3>
+        <ul class="reveal" style="list-style: none; padding: 0; margin-top: 20px;">
+            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                <span style="color: var(--c1); margin-left: 10px; font-size: 1.2em;">▸</span> 
+                <span><strong>شكك في كل شيء:</strong> لا تضغط على أي رابط، ولا تحمل أي ملف من مصدر غير موثوق، حتى لو كان من صديق (قد يكون حسابه مخترقاً).</span>
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                <span style="color: var(--c1); margin-left: 10px; font-size: 1.2em;">▸</span> 
+                <span><strong>تفعيل المصادقة الثنائية (2FA):</strong> هي خط الدفاع الأخير. حتى لو عرف الهاكر كلمة سرك، لن يستطيع الدخول بدون الرمز الذي على هاتفك.</span>
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+                <span style="color: var(--c1); margin-left: 10px; font-size: 1.2em;">▸</span> 
+                <span><strong>تحقق من الرابط:</strong> دائماً انظر لشريط العنوان. هل هو (facebook.com) أم (faceb00k-login.com)؟ الحروف المتشابهة هي خدعة شائعة.</span>
+            </li>
         </ul>
 
-        <p>في الختام، تذكر أنك "أنت" جدار الحماية الأول. الوعي الأمني هو أقوى مضاد للفيروسات يمكنك امتلاكه.</p>
+        <p class="reveal" style="margin-top: 30px; font-weight: bold; color: #fff;">في الختام، تذكر أنك "أنت" جدار الحماية الأول. الوعي الأمني هو أقوى مضاد للفيروسات يمكنك امتلاكه.</p>
         
-        <br>
-        <a href="index.html" style="color: #00ff41;">&leftarrow; العودة للصفحة الرئيسية</a>
+        <div class="info-box reveal" style="text-align: center; margin-top: 50px;">
+            <a href="index.html" style="text-decoration: none;">
+                <button>← العودة للرئيسية</button>
+            </a>
+        </div>
     </div>
+</div>
 
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 Cyber Mustafa</p>
-    </footer>
-<script src="security.js"></script>
-    <canvas id="neuralCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-logo">AXON CORE</div>
+    <p>جميع الحقوق محفوظة © 2026 — FORENSIC INTELLIGENCE SYSTEM</p>
+</footer>
 
+<!-- ── SCRIPTS (New Cyber-Noir Effects) ── -->
 <script>
-    const canvas = document.getElementById('neuralCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    let particlesArray = [];
-    const numberOfParticles = (canvas.width * canvas.height) / 9500;
+// Custom Cursor
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+(function animCursor() {
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    if(cursor) cursor.style.transform = `translate(${mx-6}px,${my-6}px)`;
+    if(ring) ring.style.transform   = `translate(${rx-20}px,${ry-20}px)`;
+    requestAnimationFrame(animCursor);
+})();
 
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 1.5 + 0.5;
-            this.speedX = Math.random() * 0.4 - 0.2;
-            this.speedY = Math.random() * 0.4 - 0.2;
-        }
-        update() {
-            this.x += this.speedX; this.y += this.speedY;
-            if (this.x > canvas.width) this.x = 0; else if (this.x < 0) this.x = canvas.width;
-            if (this.y > canvas.height) this.y = 0; else if (this.y < 0) this.y = canvas.height;
-        }
-        draw() {
-            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 255, 65, 0.6)'; ctx.fill();
-        }
-    }
-    function init() { particlesArray = []; for (let i = 0; i < numberOfParticles; i++) particlesArray.push(new Particle()); }
-    function connect() {
-        for (let a = 0; a < particlesArray.length; a++) {
-            for (let b = a; b < particlesArray.length; b++) {
-                let distance = ((particlesArray[a].x - particlesArray[b].x) ** 2) + ((particlesArray[a].y - particlesArray[b].y) ** 2);
-                if (distance < 15000) {
-                    ctx.strokeStyle = `rgba(0, 255, 65, ${1 - distance/15000})`;
-                    ctx.lineWidth = 0.5; ctx.beginPath();
-                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y); ctx.stroke();
-                }
+// Neural Canvas
+const canvas = document.getElementById('neuralCanvas');
+const ctx    = canvas.getContext('2d');
+let W, H, particles;
+function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    initParticles();
+}
+function initParticles() {
+    const n = Math.floor((W * H) / 11000);
+    particles = Array.from({ length: n }, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.2 + 0.4
+    }));
+}
+function drawNeural() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x = (p.x + p.vx + W) % W;
+        p.y = (p.y + p.vy + H) % H;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,255,231,0.5)';
+        ctx.fill();
+        for (let j = i + 1; j < particles.length; j++) {
+            const q   = particles[j];
+            const dx  = p.x - q.x, dy = p.y - q.y;
+            const d2  = dx*dx + dy*dy;
+            const max = 14000;
+            if (d2 < max) {
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(q.x, q.y);
+                const alpha = (1 - d2/max) * 0.18;
+                ctx.strokeStyle = `rgba(0,255,231,${alpha})`;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
             }
         }
     }
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); particlesArray[i].draw(); }
-        connect(); requestAnimationFrame(animate);
-    }
-    init(); animate();
-    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
+    requestAnimationFrame(drawNeural);
+}
+window.addEventListener('resize', resize);
+resize();
+drawNeural();
+
+// Scroll Reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+revealEls.forEach(el => io.observe(el));
 </script>
+
+<script src="security.js"></script>
 </body>
 </html>
