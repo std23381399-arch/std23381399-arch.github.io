@@ -3,80 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>من نحن | Cyber Mustafa</title>
+    <title>من نحن | AXON CORE</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body { font-family: sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; text-align: center; }
-        .container { max-width: 650px; margin: 50px auto; background: #161b22; padding: 40px; border-radius: 10px; border: 1px solid #00ff41; text-align: right; }
-        h1 { color: #00ff41; text-align: center; }
-        .bio-box { background: #21262d; padding: 20px; border-radius: 5px; line-height: 1.8; color: #fff; margin: 20px 0; border-right: 5px solid #00ff41; }
-        .highlight { color: #00ff41; font-weight: bold; }
-        a { color: #00ff41; text-decoration: none; display: block; margin-top: 20px; text-align: center; }
-    </style>
 </head>
 <body>
-    <div class="container">
+
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- BG Effects -->
+<div class="bg-grid"></div>
+<div class="scanline"></div>
+<canvas id="neuralCanvas"></canvas>
+
+<!-- ── HEADER ── -->
+<header>
+    <div class="logo-glow"></div>
+    <p class="header-tag">SYSTEM ONLINE // FORENSIC INTELLIGENCE v2.1</p>
+    <div class="logo-wrap">
+        <h1>AXON CORE</h1>
+    </div>
+    <p class="subtitle">نظام التحليل الجنائي المتقدم للتحقق من المصداقية الرقمية</p>
+    <div class="header-line"></div>
+</header>
+
+<!-- ── NAV ── -->
+<nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="privacy.html">سياسة الخصوصية</a>
+    <a href="contact.html">اتصل بنا</a>
+</nav>
+
+<!-- ── WRAPPER & CONTAINER ── -->
+<div class="wrapper">
+    <div class="container reveal">
         <h1>من نحن 👨‍💻</h1>
-        <div class="bio-box">
+        
+        <!-- تم استخدام فئة info-box المتوافقة مع style.css بدلاً من bio-box القديمة -->
+        <div class="info-box">
            <p>نظام <span class="highlight">AXON</span> هو ثمرة أبحاث معمقة في <span class="highlight">التحليل الجنائي الرقمي</span>، نهدف من خلاله إلى وضع معايير جديدة للتحقق من <span class="highlight">سلامة الوسائط البصرية</span> وضمان <span class="highlight">استدامة الثقة</span> في المحتوى الرقمي المعاصر.</p>
         </div>
         
-        <h3> رؤيتنا التقنية:</h3>
+        <h3>رؤيتنا التقنية:</h3>
         <p>نعتمد في فحصنا على خوارزميات هجينة تجمع بين <span class="highlight">تحليل الترددات (FFT)</span> والشبكات العصبية العميقة لضمان أعلى مستويات الدقة في التمييز بين الصور الحقيقية والمصطنعة.</p>
         
         <br>
-        <a href="index.html">العودة للصفحة الرئيسية</a>
+        <hr style="border: none; border-top: 1px solid rgba(0,255,231,0.2); margin: 20px 0;">
+        <a href="index.html" style="text-decoration: none; color: var(--c1); font-weight: bold; letter-spacing: 1px;">← العودة للمختبر الرقمي (Home)</a>
     </div>
-<script src="security.js"></script>
-    <canvas id="neuralCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+</div>
 
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-logo">AXON CORE</div>
+    <p>جميع الحقوق محفوظة © 2026 — FORENSIC INTELLIGENCE SYSTEM</p>
+</footer>
+
+<!-- ── SCRIPTS (New Cyber-Noir Effects) ── -->
 <script>
-    const canvas = document.getElementById('neuralCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    let particlesArray = [];
-    const numberOfParticles = (canvas.width * canvas.height) / 9500;
+// Custom Cursor
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+(function animCursor() {
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    if(cursor) cursor.style.transform = `translate(${mx-6}px,${my-6}px)`;
+    if(ring) ring.style.transform   = `translate(${rx-20}px,${ry-20}px)`;
+    requestAnimationFrame(animCursor);
+})();
 
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 1.5 + 0.5;
-            this.speedX = Math.random() * 0.4 - 0.2;
-            this.speedY = Math.random() * 0.4 - 0.2;
-        }
-        update() {
-            this.x += this.speedX; this.y += this.speedY;
-            if (this.x > canvas.width) this.x = 0; else if (this.x < 0) this.x = canvas.width;
-            if (this.y > canvas.height) this.y = 0; else if (this.y < 0) this.y = canvas.height;
-        }
-        draw() {
-            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 255, 65, 0.6)'; ctx.fill();
-        }
-    }
-    function init() { particlesArray = []; for (let i = 0; i < numberOfParticles; i++) particlesArray.push(new Particle()); }
-    function connect() {
-        for (let a = 0; a < particlesArray.length; a++) {
-            for (let b = a; b < particlesArray.length; b++) {
-                let distance = ((particlesArray[a].x - particlesArray[b].x) ** 2) + ((particlesArray[a].y - particlesArray[b].y) ** 2);
-                if (distance < 15000) {
-                    ctx.strokeStyle = `rgba(0, 255, 65, ${1 - distance/15000})`;
-                    ctx.lineWidth = 0.5; ctx.beginPath();
-                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y); ctx.stroke();
-                }
+// Neural Canvas
+const canvas = document.getElementById('neuralCanvas');
+const ctx    = canvas.getContext('2d');
+let W, H, particles;
+function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    initParticles();
+}
+function initParticles() {
+    const n = Math.floor((W * H) / 11000);
+    particles = Array.from({ length: n }, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.2 + 0.4
+    }));
+}
+function drawNeural() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x = (p.x + p.vx + W) % W;
+        p.y = (p.y + p.vy + H) % H;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,255,231,0.5)';
+        ctx.fill();
+        for (let j = i + 1; j < particles.length; j++) {
+            const q   = particles[j];
+            const dx  = p.x - q.x, dy = p.y - q.y;
+            const d2  = dx*dx + dy*dy;
+            const max = 14000;
+            if (d2 < max) {
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(q.x, q.y);
+                const alpha = (1 - d2/max) * 0.18;
+                ctx.strokeStyle = `rgba(0,255,231,${alpha})`;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
             }
         }
     }
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); particlesArray[i].draw(); }
-        connect(); requestAnimationFrame(animate);
-    }
-    init(); animate();
-    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
+    requestAnimationFrame(drawNeural);
+}
+window.addEventListener('resize', resize);
+resize();
+drawNeural();
+
+// Scroll Reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+revealEls.forEach(el => io.observe(el));
 </script>
+
+<script src="security.js"></script>
 </body>
 </html>
