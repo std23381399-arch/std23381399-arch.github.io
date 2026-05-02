@@ -3,44 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كيف تكتشف الصور المزيفة بالذكاء الاصطناعي؟ | Cyber Mustafa</title>
+    <title>كيف تكتشف الصور المزيفة بالذكاء الاصطناعي؟ | AXON CORE</title>
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="دليل شامل لكشف التزييف العميق (Deepfake). تعرف على 5 علامات تفضح الصور المولدة بالذكاء الاصطناعي.">
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #0d1117; color: #c9d1d9; margin: 0; line-height: 1.8; }
-        header { background: #161b22; padding: 20px; border-bottom: 1px solid #30363d; text-align: center; }
-        header a { color: #fff; text-decoration: none; font-weight: bold; margin: 0 15px; }
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; background: #161b22; border-radius: 10px; border: 1px solid #30363d; }
-        h1 { color: #00ff41; font-size: 2em; margin-bottom: 10px; }
-        .date { color: #8b949e; font-size: 0.9em; display: block; margin-bottom: 30px; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-        h2 { color: #fff; margin-top: 30px; border-right: 4px solid #00ff41; padding-right: 15px; }
-        p { font-size: 1.1em; color: #c9d1d9; margin-bottom: 20px; }
-        .highlight { background: #21262d; padding: 15px; border-radius: 5px; border: 1px dashed #00ff41; margin: 20px 0; }
-        ul { margin-bottom: 20px; }
-        li { margin-bottom: 10px; }
-        .cta-btn { display: inline-block; background: #00ff41; color: #000; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; }
-        footer { text-align: center; margin-top: 50px; padding: 20px; color: #8b949e; border-top: 1px solid #30363d; }
-    </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="privacy.html">الخصوصية</a>
-            <a href="contact.html">اتصل بنا</a>
-        </nav>
-    </header>
+<!-- Custom Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
 
-    <div class="container">
-        <h1>كيف تميز بين الحقيقة والخيال؟ 5 علامات تكشف الصور المزيفة بالذكاء الاصطناعي</h1>
-        <span class="date">كتب بواسطة: مصطفى عباس | التحديث الأخير: 2026</span>
+<!-- BG Effects -->
+<div class="bg-grid"></div>
+<div class="scanline"></div>
+<canvas id="neuralCanvas"></canvas>
+
+<!-- ── HEADER ── -->
+<header>
+    <div class="logo-glow"></div>
+    <p class="header-tag">SYSTEM ONLINE // FORENSIC INTELLIGENCE v2.1</p>
+    <div class="logo-wrap">
+        <h1>AXON CORE</h1>
+    </div>
+    <p class="subtitle">نظام التحليل الجنائي المتقدم للتحقق من المصداقية الرقمية</p>
+    <div class="header-line"></div>
+</header>
+
+<!-- ── NAV ── -->
+<nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="privacy.html">سياسة الخصوصية</a>
+    <a href="contact.html">اتصل بنا</a>
+</nav>
+
+<!-- ── WRAPPER & CONTAINER ── -->
+<div class="wrapper">
+    <div class="container reveal">
+        <h1 style="color: var(--c1); font-size: clamp(1.8em, 4vw, 2.5em); margin-bottom: 5px;">كيف تميز بين الحقيقة والخيال؟</h1>
+        <h2 style="margin-top: 0; color: #fff; border: none; padding: 0; font-family: 'Cairo', sans-serif;">5 علامات تكشف الصور المزيفة بالذكاء الاصطناعي</h2>
+        
+        <span style="display: block; font-family: 'Share Tech Mono', monospace; font-size: 0.85em; color: var(--muted); margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid rgba(0,255,231,0.1);">
+            // كُتب بواسطة: مصطفى عباس | التحديث الأخير: 2026 //
+        </span>
 
         <p>في الآونة الأخيرة، اجتاحت الإنترنت موجة من الصور المولدة بواسطة أدوات الذكاء الاصطناعي مثل Midjourney و DALL-E. بعض هذه الصور تبدو واقعية لدرجة مرعبة، مما يجعل من الصعب جداً التمييز بينها وبين الصور الحقيقية.</p>
         
-        <p>نظام <strong>AXON</strong> هو ثمرة أبحاث معمقة في <strong>التحليل الجنائي الرقمي</strong>، نهدف من خلاله إلى وضع معايير جديدة للتحقق من <strong>سلامة الوسائط البصرية</strong> وضمان <strong>استدامة الثقة</strong> في المحتوى الرقمي المعاصر.</p>
+        <p>نظام <span style="color: var(--c1); font-weight: bold; letter-spacing: 1px;">AXON</span> هو ثمرة أبحاث معمقة في <strong>التحليل الجنائي الرقمي</strong>، نهدف من خلاله إلى وضع معايير جديدة للتحقق من <strong>سلامة الوسائط البصرية</strong> وضمان <strong>استدامة الثقة</strong> في المحتوى الرقمي المعاصر.</p>
 
-        <h2>1. الأيدي والأصابع (نقطة الضعف الكبرى)</h2>
+        <h2 class="reveal">1. الأيدي والأصابع (نقطة الضعف الكبرى)</h2>
         <p>حتى الآن، لا تزال مولدات الصور تعاني مع رسم الأيدي البشرية. غالباً ما ستجد:</p>
         <ul>
             <li>أصابع زائدة (6 أصابع أو أكثر).</li>
@@ -48,81 +59,113 @@
             <li>يد تمسك الأشياء بطريقة فيزيائية مستحيلة.</li>
         </ul>
 
-        <h2>2. النصوص والكتابة العشوائية</h2>
+        <h2 class="reveal">2. النصوص والكتابة العشوائية</h2>
         <p>إذا كانت الصورة تحتوي على لافتات محلات أو كتابة على الملابس، دقق فيها جيداً. الذكاء الاصطناعي غالباً ما يولد "رموزاً غريبة" تشبه الحروف لكنها غير مفهومة، أو كلمات مكتوبة بشكل خاطئ تماماً.</p>
 
-        <div class="highlight">
+        <!-- استخدام فئة blockquote بدلاً من highlight القديمة لتوافق الـ CSS -->
+        <blockquote class="reveal">
             <strong>نصيحة خبير:</strong> دائماً قم بتكبير الصورة (Zoom) على الخلفية والتفاصيل الصغيرة، فالشيطان يكمن في التفاصيل!
-        </div>
+        </blockquote>
 
-        <h2>3. البشرة المثالية زيادة عن اللزوم</h2>
+        <h2 class="reveal">3. البشرة المثالية زيادة عن اللزوم</h2>
         <p>وجوه الذكاء الاصطناعي غالباً ما تكون "بلاستيكية" أو ناعمة جداً وخالية من المسام والتجاعيد الطبيعية. الإضاءة أيضاً قد تبدو مثالية بشكل سينمائي لا يحدث في الواقع العادي.</p>
 
-        <h2>4. الأكسسوارات والنظارات</h2>
+        <h2 class="reveal">4. الأكسسوارات والنظارات</h2>
         <p>انظر إلى النظارات أو الأقراط. أحياناً يرسم الذكاء الاصطناعي إطار النظارة بشكل مختلف من اليمين عن اليسار، أو يضع قرطاً في أذن واحدة وينسى الأخرى، أو يدمج النظارة مع الجلد.</p>
 
-        <h2>5. الخلفيات المشوهة</h2>
+        <h2 class="reveal">5. الخلفيات المشوهة</h2>
         <p>التركيز عادة يكون على الشخصية الرئيسية، لكن الخلفية تكون كارثية. قد تجد أشخاصاً بوجوه ممسوحة في الخلفية، أو مباني بخطوط معوجة، أو سيارات بأشكال غريبة.</p>
 
-        <h2>استخدم الأدوات التقنية</h2>
-        <p>العين المجردة قد تخطئ، ولهذا قمنا بتطوير أداة خاصة في موقعنا تساعدك على كشف هذه التزييفات برمجياً.</p>
+        <div class="info-box reveal" style="text-align: center; margin-top: 50px;">
+            <h3 style="margin-top: 0;">استخدم الأدوات التقنية</h3>
+            <p>العين المجردة قد تخطئ، ولهذا قمنا بتطوير أداة استقصائية خاصة في موقعنا تساعدك على كشف هذه التزييفات برمجياً بدقة عالية.</p>
+            <br>
+            <a href="index.html">
+                <button>جرب أداة AXON الآن 🚀</button>
+            </a>
+        </div>
 
-        <a href="index.html" class="cta-btn">جرب أداة كشف التزييف الآن مجاناً 🚀</a>
     </div>
+</div>
 
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 AXON CORE </p>
-    </footer>
-<script src="security.js"></script>
-    <canvas id="neuralCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-logo">AXON CORE</div>
+    <p>جميع الحقوق محفوظة © 2026 — FORENSIC INTELLIGENCE SYSTEM</p>
+</footer>
 
+<!-- ── SCRIPTS (New Cyber-Noir Effects) ── -->
 <script>
-    const canvas = document.getElementById('neuralCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    let particlesArray = [];
-    const numberOfParticles = (canvas.width * canvas.height) / 9500;
+// Custom Cursor
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+(function animCursor() {
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    if(cursor) cursor.style.transform = `translate(${mx-6}px,${my-6}px)`;
+    if(ring) ring.style.transform   = `translate(${rx-20}px,${ry-20}px)`;
+    requestAnimationFrame(animCursor);
+})();
 
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 1.5 + 0.5;
-            this.speedX = Math.random() * 0.4 - 0.2;
-            this.speedY = Math.random() * 0.4 - 0.2;
-        }
-        update() {
-            this.x += this.speedX; this.y += this.speedY;
-            if (this.x > canvas.width) this.x = 0; else if (this.x < 0) this.x = canvas.width;
-            if (this.y > canvas.height) this.y = 0; else if (this.y < 0) this.y = canvas.height;
-        }
-        draw() {
-            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 255, 65, 0.6)'; ctx.fill();
-        }
-    }
-    function init() { particlesArray = []; for (let i = 0; i < numberOfParticles; i++) particlesArray.push(new Particle()); }
-    function connect() {
-        for (let a = 0; a < particlesArray.length; a++) {
-            for (let b = a; b < particlesArray.length; b++) {
-                let distance = ((particlesArray[a].x - particlesArray[b].x) ** 2) + ((particlesArray[a].y - particlesArray[b].y) ** 2);
-                if (distance < 15000) {
-                    ctx.strokeStyle = `rgba(0, 255, 65, ${1 - distance/15000})`;
-                    ctx.lineWidth = 0.5; ctx.beginPath();
-                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y); ctx.stroke();
-                }
+// Neural Canvas
+const canvas = document.getElementById('neuralCanvas');
+const ctx    = canvas.getContext('2d');
+let W, H, particles;
+function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    initParticles();
+}
+function initParticles() {
+    const n = Math.floor((W * H) / 11000);
+    particles = Array.from({ length: n }, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.2 + 0.4
+    }));
+}
+function drawNeural() {
+    ctx.clearRect(0, 0, W, H);
+    for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x = (p.x + p.vx + W) % W;
+        p.y = (p.y + p.vy + H) % H;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0,255,231,0.5)';
+        ctx.fill();
+        for (let j = i + 1; j < particles.length; j++) {
+            const q   = particles[j];
+            const dx  = p.x - q.x, dy = p.y - q.y;
+            const d2  = dx*dx + dy*dy;
+            const max = 14000;
+            if (d2 < max) {
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(q.x, q.y);
+                const alpha = (1 - d2/max) * 0.18;
+                ctx.strokeStyle = `rgba(0,255,231,${alpha})`;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
             }
         }
     }
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < particlesArray.length; i++) { particlesArray[i].update(); particlesArray[i].draw(); }
-        connect(); requestAnimationFrame(animate);
-    }
-    init(); animate();
-    window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
+    requestAnimationFrame(drawNeural);
+}
+window.addEventListener('resize', resize);
+resize();
+drawNeural();
+
+// Scroll Reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+revealEls.forEach(el => io.observe(el));
 </script>
+
+<script src="security.js"></script>
 </body>
 </html>
