@@ -822,24 +822,7 @@
 
         <iframe src="https://tabiemedia99-ai-detector-pro.hf.space" title="AXON Detector" loading="lazy"></iframe>
         <p class="tool-note">// الأداة تعمل بمعالجة سحابية آمنة — البيانات تُحذف فور الانتهاء</p>
-
-        <!-- Heatmap Examples -->
-        <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(0,255,231,0.08);">
-            <p class="sec-sub" style="text-align:center;">— مثال على نتائج التحليل الجنائي —</p>
-            <div class="examples-grid">
-                <div class="example-card red">
-                    <div class="ex-label red">// 🔥 تحليل التلاعب — HEATMAP</div>
-                    <img src="example_heat.jpg" alt="Heatmap Example" onerror="this.style.height='160px';this.style.background='rgba(255,45,120,0.08)';this.removeAttribute('onerror')">
-                    <p>المناطق المتوهجة (أصفر → أحمر) تشير لاحتمالية عالية للتعديل الرقمي، بينما الأزرق يمثل البكسلات الطبيعية.</p>
-                </div>
-                <div class="example-card green">
-                    <div class="ex-label green">// 📸 الصورة الأصلية — ORIGINAL</div>
-                    <img src="example_orig.jpg" alt="Original Example" onerror="this.style.height='160px';this.style.background='rgba(0,255,231,0.04)';this.removeAttribute('onerror')">
-                    <p>يتم فحص توزيع الظلال، البصمة الترددية، وبيانات الحساس الضوئي بدقة لكشف أي تلاعب رقمي.</p>
-                </div>
-            </div>
-            <p class="tool-note" style="margin-top:15px;">// ملاحظة: النتائج أعلاه هي مثال توضيحي لما تظهره الأداة عند اكتشاف تزييف عميق</p>
-        </div>
+        
     </section>
 
     <div class="divider"></div>
@@ -1014,22 +997,7 @@
 
 <!-- ── SCRIPTS ── -->
 <script>
-// Custom Cursor
-const cursor = document.getElementById('cursor');
-const ring   = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-(function animCursor() {
-    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-    cursor.style.transform = `translate(${mx-6}px,${my-6}px)`;
-    ring.style.transform   = `translate(${rx-20}px,${ry-20}px)`;
-    requestAnimationFrame(animCursor);
-})();
-document.querySelectorAll('a,button,iframe').forEach(el => {
-    el.addEventListener('mouseenter', () => { ring.style.width = '60px'; ring.style.height = '60px'; ring.style.borderColor = 'rgba(0,255,231,0.8)'; });
-    el.addEventListener('mouseleave', () => { ring.style.width = '40px'; ring.style.height = '40px'; ring.style.borderColor = 'rgba(0,255,231,0.4)'; });
-});
-
+    
 // Neural Canvas
 const canvas = document.getElementById('neuralCanvas');
 const ctx    = canvas.getContext('2d');
