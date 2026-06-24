@@ -45,7 +45,7 @@
             background: var(--bg);
             color: var(--text);
             overflow-x: hidden;
-            cursor: default; /* ✅ هذا يعيد الماوس الطبيعي */
+            cursor: default; /* تأمين الماوس الطبيعي المشتغل */
         }
 
         /* ── Noise Overlay ── */
@@ -64,11 +64,7 @@
                 linear-gradient(rgba(0,255,231,0.025) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0,255,231,0.025) 1px, transparent 1px);
             background-size: 60px 60px;
-            animation: gridShift 20s linear infinite;
-        }
-        @keyframes gridShift {
-            0%   { background-position: 0 0; }
-            100% { background-position: 60px 60px; }
+            animation: none !important; /* تم تجميد حركة شبكة الـ CSS بصفحة الرئيسية */
         }
 
         /* ── Neural Canvas ── */
@@ -803,7 +799,7 @@
         <div class="tool-header">
             <div class="status-bar">
                 <div class="status-dot"></div>
-                <span class="status-text">AXON SCANNER // ACTIVE</span>
+                 <span class="status-text">AXON SCANNER // ACTIVE</span>
             </div>
             <h2 class="tool-title">نظام AXON للتحقق من سلامة الوسائط البصرية</h2>
             <p class="tool-desc">تحليل سلامة الوسائط الرقمية واكتشاف التعديلات غير المرئية بدقة عالية.</p>
@@ -836,31 +832,31 @@
                 <p>لا نحتفظ بصورك — تحليل فوري ومسح تلقائي للبيانات</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
+                 <div class="feature-icon">⚡</div>
                 <h4>SPEED</h4>
                 <p>نتيجة خلال ثوانٍ معدودة عبر معالجة سحابية متوازية</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">💸</div>
                 <h4>FREE</h4>
-                <p>مجاني 100% بلا رسوم مخفية — متاح للجميع</p>
+                 <p>مجاني 100% بلا رسوم مخفية — متاح للجميع</p>
             </div>
         </div>
 
         <div class="how-grid" style="margin-top: 40px;">
             <div class="how-card">
                 <h3>🔧 كيف تعمل الأداة؟</h3>
-                <p>يعتمد AXON على خوارزميات تعلم الآلة وموديلات مدربة على ملايين الصور. يحلل النظام "البصمة الرقمية" للصورة التي لا تُرى بالعين، ويبحث عن تشوهات دقيقة جداً تفضح التزييف عبر 4 طبقات تحليل متوازية.</p>
+                 <p>يعتمد AXON على خوارزميات تعلم الآلة وموديلات مدربة على ملايين الصور. يحلل النظام "البصمة الرقمية" للصورة التي لا تُرى بالعين، ويبحث عن تشوهات دقيقة جداً تفضح التزييف عبر 4 طبقات تحليل متوازية.</p>
             </div>
             <div class="how-card">
                 <h3>⚠️ لماذا يجب فحص الصور؟</h3>
                 <ul class="why-list">
-                    <li><span class="why-icon">▸</span> التحقق من صحة الأخبار والصور المنتشرة على الإنترنت</li>
+                     <li><span class="why-icon">▸</span> التحقق من صحة الأخبار والصور المنتشرة على الإنترنت</li>
                     <li><span class="why-icon">▸</span> كشف الحسابات الوهمية المولدة بالذكاء الاصطناعي</li>
                     <li><span class="why-icon">▸</span> حماية نفسك من عمليات الاحتيال الإلكتروني المتطور</li>
                 </ul>
             </div>
-        </div>
+         </div>
     </section>
 
     <div class="divider"></div>
@@ -872,37 +868,37 @@
         <div class="metrics-grid">
             <div class="metric-card">
                 <div class="metric-label">ACCURACY</div>
-                <div class="metric-number" data-target="96.8">0%</div>
+                 <div class="metric-number" data-target="96.8">0%</div>
                 <div class="metric-desc">الدقة الإجمالية للنظام</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">PRECISION</div>
                 <div class="metric-number" data-target="95.5">0%</div>
-                <div class="metric-desc">دقة التحديد الإيجابي</div>
+                 <div class="metric-desc">دقة التحديد الإيجابي</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">RECALL</div>
                 <div class="metric-number" data-target="97.2">0%</div>
                 <div class="metric-desc">القدرة على اصطياد التزييف</div>
             </div>
-        </div>
+         </div>
 
-        <div class="matrix-wrap">
+         <div class="matrix-wrap">
             <div class="matrix-title">مصفوفة الارتباك // CONFUSION MATRIX</div>
             <table class="cyber-table">
                 <tr>
                     <th></th>
-                    <th>توقع: حقيقي<br><small style="opacity:0.5">Predicted Real</small></th>
+                     <th>توقع: حقيقي<br><small style="opacity:0.5">Predicted Real</small></th>
                     <th>توقع: مزيف<br><small style="opacity:0.5">Predicted Fake</small></th>
                 </tr>
                 <tr>
                     <th>الواقع: حقيقي<br><small style="opacity:0.5">Actual Real</small></th>
-                    <td class="cell-tn">TRUE NEGATIVE<span class="cell-val">1450</span></td>
+                     <td class="cell-tn">TRUE NEGATIVE<span class="cell-val">1450</span></td>
                     <td class="cell-fp">FALSE POSITIVE<span class="cell-val">68</span></td>
                 </tr>
                 <tr>
                     <th>الواقع: مزيف<br><small style="opacity:0.5">Actual Fake</small></th>
-                    <td class="cell-fn">FALSE NEGATIVE ⚠️<span class="cell-val">42</span></td>
+                     <td class="cell-fn">FALSE NEGATIVE ⚠️<span class="cell-val">42</span></td>
                     <td class="cell-tp">TRUE POSITIVE<span class="cell-val">1440</span></td>
                 </tr>
             </table>
@@ -910,7 +906,7 @@
         </div>
     </section>
 
-    <div class="divider"></div>
+     <div class="divider"></div>
 
     <section class="reveal">
         <div style="text-align: center;">
@@ -919,55 +915,55 @@
         </div>
         <div class="arch-grid">
             <div class="arch-card">
-                <div class="arch-icon">⚖️</div>
+                 <div class="arch-icon">⚖️</div>
                 <h4>بيانات هجينة متوازنة</h4>
                 <span class="arch-badge">VISION TRANSFORMERS</span>
                 <p>تدريب أساسي على مجموعات متوازنة من الصور الحقيقية والمولدة لمنع الانحياز وضمان الحيادية.</p>
             </div>
             <div class="arch-card">
-                <div class="arch-icon">📂</div>
+                 <div class="arch-icon">📂</div>
                 <h4>مصادر التعلم الموسعة</h4>
                 <span class="arch-badge">+100K DATASET</span>
                 <p>عينات حقيقية ومولدة بأحدث المحركات: Midjourney, Stable Diffusion, DALL-E, Firefly وغيرها.</p>
             </div>
             <div class="arch-card">
-                <div class="arch-icon">🎯</div>
+                 <div class="arch-icon">🎯</div>
                 <h4>الفحص المتعدد الطبقات</h4>
                 <span class="arch-badge">ENSEMBLE LEARNING</span>
                 <p>دمج 4 شبكات عصبية + FFT + ELA + تحليل ضوضاء الحساس + كشف البوكيه الاحترافي.</p>
             </div>
-        </div>
+         </div>
     </section>
 
     <div class="divider"></div>
 
     <section class="articles-section reveal">
         <div class="sec-title">مقالات <span>تعليمية</span></div>
-        <p class="sec-sub">// BACKGROUND FORENSICS</p>
+        <p class="sec-sub">// KNOWLEDGE BASE</p>
         <div class="articles-grid">
             <div class="article-card">
                 <div>
-                    <div class="article-cat">// DETECTION</div>
+                     <div class="article-cat">// DETECTION</div>
                     <h3>كشف التزييف 2026</h3>
                     <p>دليل شامل يشرح علامات تفضح صور الذكاء الاصطناعي، من تشوهات الإضاءة إلى البكسلة غير المتناسقة.</p>
                 </div>
                 <a href="detect-deepfake.html" class="article-link">اقرأ المقال →</a>
-            </div>
+             </div>
             <div class="article-card">
                 <div>
                     <div class="article-cat">// SECURITY</div>
                     <h3>الهندسة الاجتماعية</h3>
-                    <p>تعرف على كيفية حماية عقلك من الاختراق قبل جهازك، وكيف يطور المهاجمون أساليب الخداع الرقمي.</p>
+                     <p>تعرف على كيفية حماية عقلك من الاختراق قبل جهازك، وكيف يطور المهاجمون أساليب الخداع الرقمي.</p>
                 </div>
                 <a href="social-engineering.html" class="article-link">اقرأ المقال →</a>
             </div>
             <div class="article-card">
                 <div>
-                    <div class="article-cat">// RESEARCH</div>
+                     <div class="article-cat">// RESEARCH</div>
                     <h3>تطور التزييف العميق</h3>
-                    <p>نظلة تقنية على كيفية تدريب النماذج الجديدة ومخاطرها على السيادة الرقمية في عام 2026.</p>
+                    <p>نظرة تقنية على كيفية تدريب النماذج الجديدة ومخاطرها على السيادة الرقمية في عام 2026.</p>
                 </div>
-                <a href="deepfake-2026.html" class="article-link">اقرأ المقال →</a>
+                 <a href="deepfake-2026.html" class="article-link">اقرأ المقال →</a>
             </div>
         </div>
     </section>
@@ -978,67 +974,63 @@
 </footer>
 
 <script>
-// Neural Canvas (تم تحسين الكثافة لتسريع الاستجابة على الموبايل 100%)
+    
+// Neural Canvas
 const canvas = document.getElementById('neuralCanvas');
-const ctx    = canvas.getContext('2d');
+ const ctx    = canvas.getContext('2d');
 let W, H, particles;
-
-function resize() {
+ function resize() {
     W = canvas.width  = window.innerWidth;
     H = canvas.height = window.innerHeight;
     initParticles();
-}
-
+ }
 function initParticles() {
-    // تم تغيير القيمة من 11000 إلى 25000 لتقليل عدد النقاط بشكل ذكي على شاشات الموبايل
-    const n = Math.floor((W * H) / 25000); 
-    particles = Array.from({ length: n }, () => ({
+    const n = Math.floor((W * H) / 11000);
+ particles = Array.from({ length: n }, () => ({
         x: Math.random() * W, y: Math.random() * H,
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.3,
         r: Math.random() * 1.2 + 0.4
     }));
-}
-
+ }
 function drawNeural() {
     ctx.clearRect(0, 0, W, H);
-    for (let i = 0; i < particles.length; i++) {
+ for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
-        p.x = (p.x + p.vx + W) % W;
+ p.x = (p.x + p.vx + W) % W;
         p.y = (p.y + p.vy + H) % H;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+ ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(0,255,231,0.5)';
         ctx.fill();
-
-        for (let j = i + 1; j < particles.length; j++) {
+ for (let j = i + 1; j < particles.length; j++) {
             const q   = particles[j];
-            const dx  = p.x - q.x, dy = p.y - q.y;
+ const dx  = p.x - q.x, dy = p.y - q.y;
             const d2  = dx*dx + dy*dy;
-            const max = 14000;
+ const max = 14000;
             if (d2 < max) {
                 ctx.beginPath();
-                ctx.moveTo(p.x, p.y);
+ ctx.moveTo(p.x, p.y);
                 ctx.lineTo(q.x, q.y);
                 const alpha = (1 - d2/max) * 0.18;
                 ctx.strokeStyle = `rgba(0,255,231,${alpha})`;
                 ctx.lineWidth = 0.5;
                 ctx.stroke();
-            }
+ }
         }
     }
     requestAnimationFrame(drawNeural);
 }
 window.addEventListener('resize', resize);
 resize();
-drawNeural();
+ drawNeural();
 
 // Scroll Reveal
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
 }, { threshold: 0.08 });
-revealEls.forEach(el => io.observe(el));
+ revealEls.forEach(el => io.observe(el));
 
 // Counter Animation
 const counters = document.querySelectorAll('.metric-number[data-target]');
@@ -1050,14 +1042,15 @@ const cIO = new IntersectionObserver(entries => {
         let cur   = 0;
         const step = end / 60;
         const t = setInterval(() => {
-            cur = Math.min(cur + step, end);
+       
+             cur = Math.min(cur + step, end);
             el.textContent = cur.toFixed(1) + '%';
             if (cur >= end) clearInterval(t);
         }, 18);
         cIO.unobserve(el);
     });
 }, { threshold: 0.5 });
-counters.forEach(c => cIO.observe(c));
+ counters.forEach(c => cIO.observe(c));
 </script>
 <script src="security.js"></script>
 </body>
