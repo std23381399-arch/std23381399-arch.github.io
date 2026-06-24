@@ -48,8 +48,6 @@
             cursor: none;
         }
 
-        /* ── Custom Cursor ── */
-
         /* ── Noise Overlay ── */
         body::before {
             content: '';
@@ -60,7 +58,8 @@
 
         /* ── Animated BG Grid ── */
         .bg-grid {
-            position: fixed; inset: 0; z-index: 0;
+            position: fixed;
+            inset: 0; z-index: 0;
             background-image:
                 linear-gradient(rgba(0,255,231,0.025) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0,255,231,0.025) 1px, transparent 1px);
@@ -74,25 +73,29 @@
 
         /* ── Neural Canvas ── */
         #neuralCanvas {
-            position: fixed; inset: 0;
+            position: fixed;
+            inset: 0;
             width: 100%; height: 100%;
             z-index: 0; pointer-events: none;
         }
 
         /* ── Scanline Effect ── */
         .scanline {
-            position: fixed; top: 0; left: 0; right: 0;
+            position: fixed;
+            top: 0; left: 0; right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--c1), transparent);
             animation: scan 6s linear infinite;
-            z-index: 2; pointer-events: none;
+            z-index: 2;
+            pointer-events: none;
             opacity: 0.15;
         }
         @keyframes scan { 0% { top: -2px; } 100% { top: 100vh; } }
 
         /* ── HEADER ── */
         header {
-            position: relative; z-index: 10;
+            position: relative;
+            z-index: 10;
             text-align: center;
             padding: 80px 20px 60px;
             overflow: hidden;
@@ -110,7 +113,8 @@
         }
 
         .logo-wrap {
-            position: relative; display: inline-block;
+            position: relative;
+            display: inline-block;
             opacity: 0;
             animation: fadeUp 0.8s ease forwards 0.4s;
         }
@@ -157,7 +161,7 @@
         }
         @keyframes pulseGlow {
             0%,100% { opacity: 0.5; transform: scale(1); }
-            50%      { opacity: 1;   transform: scale(1.05); }
+            50%      { opacity: 1; transform: scale(1.05); }
         }
 
         header p.subtitle {
@@ -171,7 +175,8 @@
         }
 
         .header-line {
-            width: 120px; height: 1px;
+            width: 120px;
+            height: 1px;
             background: linear-gradient(90deg, transparent, var(--c1), transparent);
             margin: 30px auto 0;
             opacity: 0;
@@ -180,7 +185,8 @@
 
         /* ── NAV ── */
         nav {
-            position: sticky; top: 0; z-index: 100;
+            position: sticky;
+            top: 0; z-index: 100;
             display: flex; justify-content: center; gap: 10px;
             padding: 12px 20px;
             background: rgba(3,2,10,0.85);
@@ -293,7 +299,8 @@
             margin-bottom: 20px;
         }
         .status-dot {
-            width: 7px; height: 7px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: var(--c4);
             box-shadow: 0 0 8px var(--c4);
@@ -379,7 +386,8 @@
         .ex-label.green { color: var(--c1); }
 
         .example-card img {
-            width: 100%; border-radius: 4px;
+            width: 100%;
+            border-radius: 4px;
             margin-bottom: 12px;
             border: 1px solid rgba(255,255,255,0.05);
         }
@@ -486,7 +494,8 @@
 
         .why-list { list-style: none; padding: 0; }
         .why-list li {
-            display: flex; align-items: flex-start; gap: 12px;
+            display: flex;
+            align-items: flex-start; gap: 12px;
             padding: 10px 0;
             border-bottom: 1px solid rgba(255,255,255,0.04);
             font-size: 0.9em;
@@ -625,7 +634,8 @@
         .arch-card:hover::before { transform: scaleX(1); }
         .arch-icon { font-size: 2.4em; margin-bottom: 16px; }
         .arch-card h4 {
-            color: #fff; font-size: 1em;
+            color: #fff;
+            font-size: 1em;
             margin-bottom: 6px; font-weight: 600;
         }
         .arch-badge {
@@ -703,7 +713,8 @@
 
         /* ── FOOTER ── */
         footer {
-            position: relative; z-index: 5;
+            position: relative;
+            z-index: 5;
             text-align: center;
             padding: 40px 20px;
             border-top: 1px solid rgba(0,255,231,0.08);
@@ -725,7 +736,8 @@
 
         /* ── DIVIDER ── */
         .divider {
-            width: 100%; height: 1px;
+            width: 100%;
+            height: 1px;
             background: linear-gradient(90deg, transparent, rgba(0,255,231,0.2), transparent);
             margin: 60px 0;
         }
@@ -756,16 +768,13 @@
 </head>
 <body>
 
-<!-- Custom Cursor -->
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 
-<!-- BG Effects -->
 <div class="bg-grid"></div>
 <div class="scanline"></div>
 <canvas id="neuralCanvas"></canvas>
 
-<!-- ── HEADER ── -->
 <header>
     <div class="logo-glow"></div>
     <p class="header-tag">HYBRID FORENSIC ANALYSIS ENGINE</p>
@@ -776,7 +785,6 @@
     <div class="header-line"></div>
 </header>
 
-<!-- ── NAV ── -->
 <nav>
     <a href="index.html">الرئيسية</a>
     <a href="about.html">من نحن</a>
@@ -786,7 +794,6 @@
 
 <div class="wrapper">
 
-    <!-- ── TOOL SECTION ── -->
     <section class="tool-section reveal">
         <div class="corner corner-tl"></div>
         <div class="corner corner-tr"></div>
@@ -809,7 +816,6 @@
 
     <div class="divider"></div>
 
-    <!-- ── INFO SECTION ── -->
     <section class="info-section reveal">
         <div class="sec-title">كيف تكتشف الصور <span>المزيفة</span>؟</div>
         <p class="sec-sub">// DETECTION METHODOLOGY</p>
@@ -859,7 +865,6 @@
 
     <div class="divider"></div>
 
-    <!-- ── METRICS ── -->
     <section class="metrics-section reveal">
         <div class="sec-title">المقاييس العلمية <span>للنظام</span></div>
         <p class="sec-sub">// EVALUATION METRICS — AXON CORE</p>
@@ -907,7 +912,6 @@
 
     <div class="divider"></div>
 
-    <!-- ── ARCHITECTURE ── -->
     <section class="reveal">
         <div style="text-align: center;">
             <div class="sec-title">التوثيق العلمي <span>للمحرك</span></div>
@@ -937,10 +941,9 @@
 
     <div class="divider"></div>
 
-    <!-- ── ARTICLES ── -->
     <section class="articles-section reveal">
         <div class="sec-title">مقالات <span>تعليمية</span></div>
-        <p class="sec-sub">// KNOWLEDGE BASE</p>
+        <p class="sec-sub">// BACKGROUND FORENSICS</p>
         <div class="articles-grid">
             <div class="article-card">
                 <div>
@@ -962,35 +965,33 @@
                 <div>
                     <div class="article-cat">// RESEARCH</div>
                     <h3>تطور التزييف العميق</h3>
-                    <p>نظرة تقنية على كيفية تدريب النماذج الجديدة ومخاطرها على السيادة الرقمية في عام 2026.</p>
+                    <p>نظلة تقنية على كيفية تدريب النماذج الجديدة ومخاطرها على السيادة الرقمية في عام 2026.</p>
                 </div>
                 <a href="deepfake-2026.html" class="article-link">اقرأ المقال →</a>
             </div>
         </div>
     </section>
 
-</div><!-- /wrapper -->
-
-<!-- ── FOOTER ── -->
-<footer>
+</div><footer>
     <div class="footer-logo">AXON CORE</div>
     <p>جميع الحقوق محفوظة © 2026 — AXON CORE</p>
 </footer>
 
-<!-- ── SCRIPTS ── -->
 <script>
-    
-// Neural Canvas
+// Neural Canvas (تم تحسين الكثافة لتسريع الاستجابة على الموبايل 100%)
 const canvas = document.getElementById('neuralCanvas');
 const ctx    = canvas.getContext('2d');
 let W, H, particles;
+
 function resize() {
     W = canvas.width  = window.innerWidth;
     H = canvas.height = window.innerHeight;
     initParticles();
 }
+
 function initParticles() {
-    const n = Math.floor((W * H) / 11000);
+    // تم تغيير القيمة من 11000 إلى 25000 لتقليل عدد النقاط بشكل ذكي على شاشات الموبايل
+    const n = Math.floor((W * H) / 25000); 
     particles = Array.from({ length: n }, () => ({
         x: Math.random() * W, y: Math.random() * H,
         vx: (Math.random() - 0.5) * 0.3,
@@ -998,6 +999,7 @@ function initParticles() {
         r: Math.random() * 1.2 + 0.4
     }));
 }
+
 function drawNeural() {
     ctx.clearRect(0, 0, W, H);
     for (let i = 0; i < particles.length; i++) {
@@ -1008,6 +1010,7 @@ function drawNeural() {
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(0,255,231,0.5)';
         ctx.fill();
+
         for (let j = i + 1; j < particles.length; j++) {
             const q   = particles[j];
             const dx  = p.x - q.x, dy = p.y - q.y;
