@@ -3,6 +3,32 @@
    هذا الملف يغير تصميم جميع صفحاتك دفعة واحدة
    ================================================ */
 
+/* 🔤 استدعاء الخطوط المحلية بالمسارات الجديدة المربوطة بالهيكلية */
+@font-face {
+    font-family: 'LamaSans';
+    src: url('../fonts/_LamaSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'LamaSans';
+    src: url('../fonts/_LamaSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ReaderPro';
+    src: url('../fonts/ReaderPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ReaderPro';
+    src: url('../fonts/ReaderPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Cairo:wght@300;400;600;700&family=Share+Tech+Mono&display=swap');
 
 :root {
@@ -48,6 +74,7 @@ body::after {
     animation: gridShift 20s linear infinite;
 }
 @keyframes gridShift { 100% { background-position: 60px 60px; } }
+
 /* ── Custom Cursor (المؤشر السيبراني) ── */
 #cursor {
     width: 12px; height: 12px;
