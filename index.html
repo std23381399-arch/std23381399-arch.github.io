@@ -983,6 +983,7 @@ let W, H, particles;
     W = canvas.width  = window.innerWidth;
     H = canvas.height = window.innerHeight;
     initParticles();
+    drawNeural();
  }
 function initParticles() {
     const n = Math.floor((W * H) / 11000);
@@ -1019,7 +1020,7 @@ function drawNeural() {
  }
         }
     }
-    requestAnimationFrame(drawNeural);
+    //requestAnimationFrame(drawNeural);
 }
 window.addEventListener('resize', resize);
 resize();
