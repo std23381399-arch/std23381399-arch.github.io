@@ -71,7 +71,7 @@ body::after {
         linear-gradient(rgba(0,255,231,0.022) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0,255,231,0.022) 1px, transparent 1px);
     background-size: 60px 60px;
-    animation: gridShift 20s linear infinite;
+    animation: none !important;
 }
 @keyframes gridShift { 100% { background-position: 60px 60px; } }
 
@@ -104,7 +104,7 @@ body::after {
         linear-gradient(rgba(0,255,231,0.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0,255,231,0.025) 1px, transparent 1px);
     background-size: 60px 60px;
-    animation: gridShift 20s linear infinite;
+    animation: none !important;
 }
 @keyframes gridShift {
     0%   { background-position: 0 0; }
