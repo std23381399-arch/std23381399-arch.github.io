@@ -39,17 +39,27 @@
         <div class="header-line"></div>
     </div>
 
-    <div class="contact-section" style="text-align: center; margin-top: 40px;">
-    <!-- العبارة الحالية مالتك في الموقع -->
-    <p class="contact-text" style="font-size: 1.2rem; color: #ffffff; margin-bottom: 20px;">
-        أرسل لنا رسالة وسنعاود الاتصال بك في أقرب وقت.
-    </p>
-    
-    <!-- عرض البريد الإلكتروني بشكل مباشر وقابل للضغط -->
-    <div class="email-box" style="margin-top: 15px;">
-        <a href="mailto:musqq53@gmail.com" class="email-link" style="font-size: 1.5rem; color: #00ff66; text-decoration: none; font-weight: bold; letter-spacing: 1px;">
-            mustqq53@gmail.com
-        </a>
+    <div class="contact-section" style="margin-top: 40px;">
+        <p class="contact-text" style="text-align: center; font-size: 1.2rem; color: #ffffff; margin-bottom: 15px;">
+            أرسل لنا رسالة وسنعاود الاتصال بك في أقرب وقت.
+        </p>
+        
+        <p style="text-align: center; color: #00ff66; font-size: 1.2rem; margin-bottom: 30px; font-weight: bold; letter-spacing: 0.5px;">
+            أو راسلنا مباشرة عبر: <a href="mailto:mustqq53@gmail.com" style="color: #00ff66; text-decoration: underline; transition: all 0.3s ease;">mustqq53@gmail.com</a>
+        </p>
+
+        <form onsubmit="event.preventDefault(); const name=this.querySelector('[name=name]').value; const subject=this.querySelector('[name=subject]').value; const message=this.querySelector('[name=message]').value; window.location.href=`mailto:mustqq53@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('الاسم: ' + name + '\n\nالرسالة:\n' + message)}`;" style="display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto;">
+            
+            <input type="text" name="name" placeholder="الاسم" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(212,168,75,0.2); border-radius: 4px; color: #fff; font-family: inherit;">
+            
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(212,168,75,0.2); border-radius: 4px; color: #fff; font-family: inherit;">
+            
+            <input type="text" name="subject" placeholder="الموضوع" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(212,168,75,0.2); border-radius: 4px; color: #fff; font-family: inherit;">
+            
+            <textarea name="message" placeholder="نص الرسالة" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(212,168,75,0.2); border-radius: 4px; color: #fff; min-height: 120px; font-family: inherit; resize: vertical;"></textarea>
+
+            <button type="submit" style="padding: 12px 24px; background: #d4a84b; border: none; border-radius: 4px; color: #111; font-weight: bold; cursor: pointer; transition: all 0.3s ease; margin-top: 10px;">إرسال الرسالة</button>
+        </form>
     </div>
 </div>
 
