@@ -1,118 +1,235 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9FLGS8MEL"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-H9FLGS8MEL');</script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6073099430341083" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXON CORE | كاشف الصور المولدة بالذكاء الاصطناعي</title>
-    <meta name="description" content="نظام AXON للتحقق من سلامة الوسائط البصرية">
+    <title>AXON DETECT | Hybrid AI & Deepfake Forensic Detector</title>
+    <meta name="description" content="نظام AXON CORE للتحليل الجنائي الرقمي وكشف الصور المولدة بالذكاء الاصطناعي والتزييف العميق">
     <link rel="icon" type="image/svg+xml" href="assets/images/L5.svg">
-    <link rel="apple-touch-icon" href="assets/images/L5.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-<div id="backToTop" aria-label="العودة للأعلى"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></div>
 
-<header>
-    <div class="logo-icon"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="28" stroke="#d4a84b" stroke-width="1.5" opacity="0.3"/><circle cx="32" cy="32" r="18" stroke="#d4a84b" stroke-width="1.5" opacity="0.4"/><circle cx="32" cy="32" r="8" fill="#d4a84b" opacity="0.6"/><path d="M32 4 L36 16 L32 12 L28 16 Z" fill="#d4a84b" opacity="0.5"/><path d="M32 60 L36 48 L32 52 L28 48 Z" fill="#d4a84b" opacity="0.5"/><path d="M4 32 L16 28 L12 32 L16 36 Z" fill="#d4a84b" opacity="0.5"/><path d="M60 32 L48 28 L52 32 L48 36 Z" fill="#d4a84b" opacity="0.5"/></svg></div>
-    <p class="header-tag"></p>
-    <div class="logo-wrap"><h1>AXON <span>CORE</span></h1></div>
-    <div class="subtitle-wrap"><div class="subtitle-line"></div><p>نظام التحليل الجنائي المتقدم للتحقق من المصداقية الرقمية</p><div class="subtitle-line"></div></div>
+<!-- الشريط العلوي المطابق لـ Hive Detect -->
+<header class="top-nav" dir="ltr">
+    <button class="icon-btn" id="menuToggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <a href="index.html" class="brand-logo">
+        <span class="wave-icon">
+            <span></span><span></span><span></span><span></span>
+        </span>
+        <span class="brand-text">AXON DETECT</span>
+    </a>
+
+    <button class="icon-btn" id="newUploadBtn" title="رفع صورة جديدة">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+        </svg>
+    </button>
 </header>
 
-<nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">من نحن</a>
-    <a href="privacy.html">سياسة الخصوصية</a>
-    <a href="contact.html">اتصل بنا</a>
-</nav>
-
-<div class="wrapper">
-    <section class="tool-section reveal">
-        <div class="tool-header">
-            <div class="status-bar"><div class="status-dot"></div><span class="status-text">AXON SCANNER // ACTIVE</span></div>
-            <h2 class="tool-title">نظام <span>AXON</span> للتحقق من سلامة الوسائط البصرية</h2>
-            <p class="tool-desc">تحليل سلامة الوسائط الرقمية واكتشاف التعديلات غير المرئية بدقة عالية.</p>
+<!-- القائمة الجانبية المنبثقة (مطابقة للصورة 8 في Hive Detect) -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="side-drawer" id="sideDrawer" dir="ltr">
+    <div class="drawer-header">
+        <button class="icon-btn" id="closeDrawer">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="brand-logo">
+            <span class="wave-icon"><span></span><span></span><span></span><span></span></span>
+            <span class="brand-text">AXON DETECT</span>
         </div>
-        <iframe src="https://tabiemedia99-ai-detector-pro.hf.space" title="AXON Detector" loading="lazy"></iframe>
-        <p class="tool-note">// الأداة تعمل بمعالجة سحابية آمنة — البيانات تُحذف فور الانتهاء</p>
-    </section>
+    </div>
 
-    <div class="divider"></div>
+    <nav class="drawer-links">
+        <a href="#" id="drawerUploadFile">Upload Media</a>
+        <a href="#" id="drawerUploadUrl">Upload URL</a>
+        <a href="#forensicSection" id="drawerForensic">Forensic Heatmap (ELA / FFT)</a>
+        <a href="https://tabiemedia99-ai-detector-pro.hf.space" target="_blank" rel="noopener">AXON Cloud Space ↗</a>
+    </nav>
 
-    <section class="info-section reveal">
-        <div class="sec-title">كيف تكتشف الصور <span>المزيفة</span>؟</div>
-        <p class="sec-sub">// DETECTION METHODOLOGY</p>
-        <p class="info-body">في عصر التكنولوجيا المتسارع، أصبح من الصعب جداً التفريق بين الصور الحقيقية والصور التي تم إنشاؤها أو تعديلها بواسطة الذكاء الاصطناعي. تقنيات "التزييف العميق" تطورت بشكل مذهل — ولهذا طورنا AXON CORE لحمايتك بأحدث ما توصل إليه العلم.</p>
-        <div class="feature-grid">
-            <div class="feature-card"><div class="feature-icon">🎯</div><h4>ACCURACY</h4><p>أحدث موديلات Vision Transformers بدقة تصل لـ 90%</p></div>
-            <div class="feature-card"><div class="feature-icon">🔒</div><h4>PRIVACY</h4><p>لا نحتفظ بصورك — تحليل فوري ومسح تلقائي للبيانات</p></div>
-            <div class="feature-card"><div class="feature-icon">⚡</div><h4>SPEED</h4><p>نتيجة خلال ثوانٍ معدودة عبر معالجة سحابية متوازية</p></div>
-            <div class="feature-card"><div class="feature-icon">💸</div><h4>FREE</h4><p>مجاني 100% بلا رسوم مخفية — متاح للجميع</p></div>
+    <div class="drawer-footer">
+        <p class="project-badge">Graduation Project 2026<br><strong>A Hybrid Digital Forensics System</strong></p>
+    </div>
+</aside>
+
+<!-- نافذة إدخال رابط صورة (Upload URL Modal) -->
+<div class="url-modal" id="urlModal" dir="ltr">
+    <div class="url-modal-content">
+        <h3>Inspect Image via URL</h3>
+        <input type="url" id="imageUrlInput" placeholder="https://example.com/image.jpg">
+        <div class="url-modal-actions">
+            <button class="btn-secondary" id="cancelUrlBtn">Cancel</button>
+            <button class="btn-primary" id="submitUrlBtn">Analyze URL</button>
         </div>
-        <div class="how-grid" style="margin-top:40px">
-            <div class="how-card"><h3>🔧 كيف <span>تعمل</span> الأداة؟</h3><p>يعتمد AXON على خوارزميات تعلم الآلة وموديلات مدربة على ملايين الصور. يحلل النظام "البصمة الرقمية" للصورة التي لا تُرى بالعين، ويبحث عن تشوهات دقيقة جداً تفضح التزييف عبر 4 طبقات تحليل متوازية.</p></div>
-            <div class="how-card"><h3>⚠️ لماذا <span>يجب</span> فحص الصور؟</h3><ul class="why-list"><li><span class="why-icon">▸</span> التحقق من صحة الأخبار والصور المنتشرة على الإنترنت</li><li><span class="why-icon">▸</span> كشف الحسابات الوهمية المولدة بالذكاء الاصطناعي</li><li><span class="why-icon">▸</span> حماية نفسك من عمليات الاحتيال الإلكتروني المتطور</li></ul></div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section class="metrics-section reveal">
-        <div class="sec-title">المقاييس العلمية <span>للنظام</span></div>
-        <p class="sec-sub">// EVALUATION METRICS — AXON CORE</p>
-        <div class="metrics-grid">
-            <div class="metric-card"><div class="metric-label">ACCURACY</div><div class="metric-number" data-target="96.8">0%</div><div class="metric-desc">الدقة الإجمالية للنظام</div></div>
-            <div class="metric-card"><div class="metric-label">PRECISION</div><div class="metric-number" data-target="95.5">0%</div><div class="metric-desc">دقة التحديد الإيجابي</div></div>
-            <div class="metric-card"><div class="metric-label">RECALL</div><div class="metric-number" data-target="97.2">0%</div><div class="metric-desc">القدرة على اصطياد التزييف</div></div>
-        </div>
-        <div class="matrix-wrap">
-            <div class="matrix-title">مصفوفة الارتباك // CONFUSION MATRIX</div>
-            <table class="cyber-table">
-                <tr><th></th><th>توقع: حقيقي<br><small style="opacity:0.5">Predicted Real</small></th><th>توقع: مزيف<br><small style="opacity:0.5">Predicted Fake</small></th></tr>
-                <tr><th>الواقع: حقيقي<br><small style="opacity:0.5">Actual Real</small></th><td class="cell-tn">TRUE NEGATIVE<span class="cell-val">1450</span></td><td class="cell-fp">FALSE POSITIVE<span class="cell-val">68</span></td></tr>
-                <tr><th>الواقع: مزيف<br><small style="opacity:0.5">Actual Fake</small></th><td class="cell-fn">FALSE NEGATIVE ⚠️<span class="cell-val">42</span></td><td class="cell-tp">TRUE POSITIVE<span class="cell-val">1440</span></td></tr>
-            </table>
-            <p class="matrix-note">⚠ معدل السلبيات الخاطئة منخفض جداً — يؤكد صلابة الدرع السيبراني ضد تمرير الصور المزيفة</p>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section class="reveal">
-        <div style="text-align:center"><div class="sec-title">التوثيق العلمي <span>للمحرك</span></div><p class="sec-sub">// MODEL ARCHITECTURE — ZERO-BIAS DESIGN</p></div>
-        <div class="arch-grid">
-            <div class="arch-card"><div class="arch-icon">⚖️</div><h4>بيانات هجينة متوازنة</h4><span class="arch-badge">VISION TRANSFORMERS</span><p>تدريب أساسي على مجموعات متوازنة من الصور الحقيقية والمولدة لمنع الانحياز وضمان الحيادية.</p></div>
-            <div class="arch-card"><div class="arch-icon">📂</div><h4>مصادر التعلم الموسعة</h4><span class="arch-badge">+100K DATASET</span><p>عينات حقيقية ومولدة بأحدث المحركات: Midjourney, Stable Diffusion, DALL-E, Firefly وغيرها.</p></div>
-            <div class="arch-card"><div class="arch-icon">🎯</div><h4>الفحص المتعدد الطبقات</h4><span class="arch-badge">ENSEMBLE LEARNING</span><p>دمج 4 شبكات عصبية + FFT + ELA + تحليل ضوضاء الحساس + كشف البوكيه الاحترافي.</p></div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section class="articles-section reveal">
-        <div class="sec-title">مقالات <span>تعليمية</span></div>
-        <p class="sec-sub">// KNOWLEDGE BASE</p>
-        <div class="articles-grid">
-            <div class="article-card"><div><div class="article-cat">// DETECTION</div><h3>كشف التزييف 2026</h3><p>دليل شامل يشرح علامات تفضح صور الذكاء الاصطناعي، من تشوهات الإضاءة إلى البكسلة غير المتناسقة.</p></div><a href="detect-deepfake.html" class="article-link">اقرأ المقال →</a></div>
-            <div class="article-card"><div><div class="article-cat">// SECURITY</div><h3>الهندسة الاجتماعية</h3><p>تعرف على كيفية حماية عقلك من الاختراق قبل جهازك، وكيف يطور المهاجمون أساليب الخداع الرقمي.</p></div><a href="social-engineering.html" class="article-link">اقرأ المقال →</a></div>
-            <div class="article-card"><div><div class="article-cat">// RESEARCH</div><h3>تطور التزييف العميق</h3><p>نظرة تقنية على كيفية تدريب النماذج الجديدة ومخاطرها على السيادة الرقمية في عام 2026.</p></div><a href="deepfake-2026.html" class="article-link">اقرأ المقال →</a></div>
-        </div>
-    </section>
+    </div>
 </div>
 
-<footer>
-    <div class="footer-logo">AXON <span>CORE</span></div>
-    <p>جميع الحقوق محفوظة © 2026 — AXON CORE</p>
-</footer>
+<!-- الحاوية الرئيسية للتطبيق -->
+<main class="app-container" dir="ltr">
+
+    <!-- الإدخال المخفي للملفات -->
+    <input type="file" id="fileInput" accept="image/*" hidden>
+
+    <!-- منطقة الرفع الأولية (تظهر قبل اختيار الصورة أو عند الضغط على رفع جديد) -->
+    <section class="upload-hero" id="uploadHero">
+        <div class="upload-dropzone" id="dropzone">
+            <div class="upload-icon-circle">
+                <svg viewBox="0 0 24 24" width="32" height="32" stroke="#5b3df5" stroke-width="2" fill="none">
+                    <rect x="3" y="3" width="18" height="18" rx="4" ry="4"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+            </div>
+            <h2>Drop an image here, or <span>browse</span></h2>
+            <p>ارفع أي صورة لفحصها عبر محرك AXON الهجين وتحديد مصدر التوليد ونسبة التزييف العميق</p>
+            <div class="hero-actions">
+                <button class="btn-primary" id="browseBtn">Select Image</button>
+                <button class="btn-outline" id="openUrlModalBtn">Paste Image URL</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- واجهة النتائج المطابقة لـ Hive Detect (تظهر فور رفع الصورة) -->
+    <section class="results-layout hidden" id="resultsLayout">
+
+        <!-- العمود الأيسر: معاينة الصورة والخريطة الحرارية الجنائية -->
+        <div class="media-column">
+            <div class="media-preview-card">
+                <div class="view-mode-tabs">
+                    <button class="view-tab active" data-view="original">Original Media</button>
+                    <button class="view-tab" data-view="ela">ELA Forensic Map</button>
+                    <button class="view-tab" data-view="srm">SRM Sensor Noise</button>
+                </div>
+
+                <div class="media-stage">
+                    <img id="previewImage" src="" alt="Uploaded Media">
+                    <canvas id="forensicCanvas" class="hidden"></canvas>
+                    <div class="scan-overlay hidden" id="scanOverlay">
+                        <div class="scan-laser"></div>
+                        <span>Analyzing Digital Forensics...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- شريط الصور المصغرة بالأسفل (مثل أسفل شاشة Hive Detect) -->
+            <div class="thumbnail-bar">
+                <div class="thumb-item active" id="currentThumbWrap">
+                    <img id="thumbImage" src="" alt="Thumb">
+                </div>
+                <button class="thumb-add" id="addAnotherBtn" title="فحص صورة أخرى">+</button>
+            </div>
+        </div>
+
+        <!-- العمود الأيمن: بطاقات التقييم ومصادر التوليد وشهادات المحتوى -->
+        <div class="report-column">
+
+            <!-- 1. بطاقة This Media is -->
+            <div class="hive-card">
+                <div class="card-top-row">
+                    <h2 class="card-heading">This Media is</h2>
+                    <button class="link-copy-btn" id="reAnalyzeBtn" title="إعادة الفحص">
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- شريط AI-Generated Image -->
+                <div class="score-meter-box">
+                    <div class="meter-header">
+                        <span class="meter-percent" id="aiGenPercent">0%</span>
+                        <div class="meter-label-group">
+                            <span class="likely-sub">Likely to be</span>
+                            <span class="likely-title">AI-Generated Image</span>
+                        </div>
+                    </div>
+                    <div class="meter-track">
+                        <div class="meter-fill" id="aiGenBar" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <!-- شريط Deepfake -->
+                <div class="score-meter-box">
+                    <div class="meter-header">
+                        <span class="meter-percent" id="deepfakePercent">0%</span>
+                        <div class="meter-label-group">
+                            <span class="likely-sub">Likely to be</span>
+                            <span class="likely-title">Deepfake</span>
+                        </div>
+                    </div>
+                    <div class="meter-track">
+                        <div class="meter-fill" id="deepfakeBar" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <!-- قسم Generation Sources -->
+                <h3 class="subsection-title">Generation Sources</h3>
+                <div class="sources-box">
+                    <div class="sources-header">
+                        <span class="sources-cat-title">AI-Generated</span>
+                        <span class="sources-cat-badge" id="sourcesAiBadge">0%</span>
+                    </div>
+
+                    <!-- قائمة المحركات الأساسية (Top 5) -->
+                    <div class="pills-container" id="topSourcesPills"></div>
+
+                    <!-- قائمة المحركات الإضافية (تفتح عند الضغط على View More Results) -->
+                    <div class="pills-container hidden" id="moreSourcesPills"></div>
+
+                    <button class="view-more-btn" id="toggleSourcesBtn">View 52 More Results</button>
+
+                    <div class="sources-divider"></div>
+
+                    <div class="sources-header">
+                        <span class="sources-cat-title">Deepfake</span>
+                        <span class="sources-cat-badge" id="sourcesDeepfakeBadge">0%</span>
+                    </div>
+                    <div class="pills-container" id="deepfakeSourcesPills"></div>
+                </div>
+            </div>
+
+            <!-- 2. بطاقة Content Credentials (C2PA & EXIF) -->
+            <div class="hive-card credentials-card">
+                <div class="credentials-header" id="credentialsToggle">
+                    <div class="cred-title-wrap">
+                        <span>Content Credentials</span>
+                        <span class="info-circle" title="معيار التحقق من المصدر والتواقيع الرقمية C2PA / EXIF">i</span>
+                    </div>
+                    <svg class="chevron-icon" id="credChevron" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                </div>
+                <div class="credentials-body" id="credentialsBody">
+                    <p id="credentialsText">No Content Credentials found for this media.</p>
+                    <div class="forensic-metrics-mini" id="forensicMiniMetrics">
+                        <div class="f-metric"><span>2D FFT Spectrum:</span> <strong id="fftValText">0%</strong></div>
+                        <div class="f-metric"><span>SRM Sensor Noise:</span> <strong id="srmValText">0%</strong></div>
+                        <div class="f-metric"><span>ELA Compression:</span> <strong id="elaValText">0%</strong></div>
+                        <div class="f-metric"><span>Resolution:</span> <strong id="imgDimText">—</strong></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
 
 <script src="assets/js/main.js"></script>
-<script src="security.js"></script>
 </body>
 </html>
